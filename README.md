@@ -1,4 +1,20 @@
 # Chat App med ReactJS og Meteor
+__React__  
+React er et front-end rammeverk som håndterer logikk på brukergrensesnittet til appen vår. Her bruker vi
+konsepter som heter Components og Containers der Components er det som håndterer alt av rendering og visning av
+brukergrensesnittet, mens Containers håndterer alt av databasespørringer og behandling av data som skal videre bli
+sendt til Components.
+
+Mer dokumentasjon om React: https://facebook.github.io/react/docs/hello-world.html
+
+__Meteor__  
+Meteor er et back-end rammeverk som håndterer det meste av server og klient kommunikasjon.
+Det gjør det lettere for oss som utviklere å kode fordi vi slipper å server-klient flyten fra scratch.
+Meteor bruker Javascript som programmeringsspråk som gjør at vi kun trenger å kunne ett programmeringsspråk
+til å lage appen vår. MongoDB er standard databaseverktøyet som blir brukt med Meteor som er kjapt å sette opp
+og lett å bruke, tilnærmet ingen databasekunnskaper trengs for å begynne.
+
+Mer dokumentasjon om Meteor: http://docs.meteor.com/#/full/
 
 ## Dag 1 ##
 
