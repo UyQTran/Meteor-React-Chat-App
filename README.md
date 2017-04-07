@@ -1,6 +1,6 @@
 # Chat App med ReactJS og Meteor
 
-##Dag 1
+##Dag 1##
 
 __Oppgave 1.1\: Oppsett på egen maskin__  
 Last ned og installer Meteor: https://www.meteor.com/install
