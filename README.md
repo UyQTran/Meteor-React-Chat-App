@@ -5,8 +5,8 @@ Dette kurset er ment til nybegynnere i React og Javascript, men helt grunnleggen
 HTML-, CSS- og programmeringskunnskaper er forventet at du skal kunne. 
 
 __Oppgave 0.1\: Editor__  
-Kjør opp din favoritteditor/IDE! Jeg anbefaler IntelliJ, men Eclipse og Atom fungerer også
-helt fint. IntelliJ koster orginalt 500EUR i året, men som UiO student så kan du få det gratis
+Kjør opp din favoritteditor/IDE! Jeg anbefaler Webstorm, men Eclipse og Atom fungerer også
+helt fint. Webstorm koster orginalt 500EUR i året, men som UiO student så kan du få det gratis
 ved å registrere deg her(husk å bruke UiO e-posten din): https://www.jetbrains.com/student/
 
 __React__  
