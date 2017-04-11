@@ -66,4 +66,19 @@ kun fungerer med meteor.
 
 ## 2: React ##
 
-__Oppgave 2.1\: Hello World!__  
+__Oppgave 2.1\: Min chatteapp!__  
+Endelig kan du begynne å kode! Nå skal du gi appen et navn. Gjør dette ved å endre på tittelen
+på nettsiden i client/main.html.
+
+Javascript filen imports/ui/App.jsx er den første komponenten til appen vår. Innholdet i denne
+blir vist helt på starten av appen. Akkurat nå er den helt tom så du kan prøve å legge til
+en h1 element med navnet på appen inne i div elementet slik:
+```javascript
+render() {
+        return (
+            <div className="landing-page">
+                
+            </div>
+        );
+    }
+```

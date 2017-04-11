@@ -12,9 +12,7 @@ export default class App extends Component {
     render() {
         return (
             <div className="landing-page">
-                <h1>
-                    Chat App
-                </h1>
+
             </div>
         );
     }
