@@ -58,3 +58,12 @@ hvilke biblioteker prosjektet er avhengig av.
 ![alt tag](http://heim.ifi.uio.no/uqtran/Applitude/Chat-app/package-dependencies.png)
 
 Hvis package-filen ser ut som bildet over kan du fortsette!
+
+__Oppgave 1 fullført! Hva har vi lært?__  
+* Hvordan vi installerer nye biblioteker med npm. Merk at kommandoen "meteor npm install"
+kun fungerer med meteor.
+
+
+## 2: React ##
+
+__Oppgave 2.1\: __  
