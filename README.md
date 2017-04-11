@@ -55,7 +55,7 @@ __Oppgave 1.6\: Sjekk!__
 Sjekk om alt er som det skal. Filen som heter "package.json" er en fil som beskriver
 hvilke biblioteker prosjektet er avhengig av. 
 
-->![alt tag](http://heim.ifi.uio.no/uqtran/Applitude/Chat-app/package-dependencies.png)<-
+![alt tag](http://heim.ifi.uio.no/uqtran/Applitude/Chat-app/package-dependencies.png)
 
 Hvis package-filen ser ut som bildet over kan du fortsette!
 
