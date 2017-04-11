@@ -55,7 +55,22 @@ __Oppgave 1.6\: Sjekk!__
 Sjekk om alt er som det skal. Filen som heter "package.json" er en fil som beskriver
 hvilke biblioteker prosjektet er avhengig av. 
 
-![alt tag](http://heim.ifi.uio.no/uqtran/Applitude/Chat-app/package-dependencies.png)
+```json
+{
+  "name": "chat-app",
+  "private": true,
+  "scripts": {
+    "start": "meteor run"
+  },
+  "dependencies": {
+    "material-ui": "^0.17.3",
+    "meteor-node-stubs": "~0.2.0",
+    "react": "^15.5.3",
+    "react-dom": "^15.5.3",
+    "react-tap-event-plugin": "^2.0.1"
+  }
+}
+```
 
 Hvis package-filen ser ut som bildet over kan du fortsette!
 
@@ -66,4 +81,22 @@ kun fungerer med meteor.
 
 ## 2: React ##
 
-__Oppgave 2.1\: Hello World!__  
+__Oppgave 2.1\: Min chatteapp!__  
+Endelig kan du begynne å kode! Nå skal du gi appen et navn. Gjør dette ved å endre på tittelen
+på nettsiden i client/main.html.
+
+Javascript filen imports/ui/App.jsx er den første komponenten til appen vår. Innholdet i denne
+blir vist helt på starten av appen. Akkurat nå er den helt tom så du kan prøve å legge til
+en h1 element med navnet på appen inne i div elementet slik:
+```javascript
+render() {
+        return (
+            <div className="landing-page">
+                <h1>
+                    Chat App
+                </h1>
+            </div>
+        );
+    }
+```
+
