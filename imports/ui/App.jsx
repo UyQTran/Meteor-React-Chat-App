@@ -11,8 +11,10 @@ export default class App extends Component {
 
     render() {
         return (
-            <div>
-
+            <div className="landing-page">
+                <h1>
+                    Chat App
+                </h1>
             </div>
         );
     }
