@@ -203,4 +203,4 @@ skal stå på knappen. På den ene knappen skal det stå "Join" og på den andre
 "Create". Appen skal se slik ut:  
 ![alt tag](http://heim.ifi.uio.no/uqtran/Applitude/Chat-app/button-screen.png)
 
-__Oppgave 2.2\: Routing__  
+__Oppgave 2.3\: Routing__  
