@@ -193,4 +193,14 @@ såkalt Javascript-modus. Disse krøllparantesene kan kun inneholde ett uttrykk.
 på denne modusen til HTML ved å skrive HTML igjen inne i krøllparantesen og dette kan da 
 gjentas i evigheter.
 
-__Oppgave 2.2\: Legg til knapper__  
+__Oppgave 2.2\: Knapper__  
+Akkurat som HTML så er det veldig lett å legge til knapper. Importer FlatButton fra 
+material-ui/FlatButton akkurat som du har gjort tidligere.
+
+Legg til to FlatButton-komponenter rett under h1-elementet i LandingPage. FlatButton har
+en property som heter label, denne propertien tar imot en tekststreng som bestemmer hva som
+skal stå på knappen. På den ene knappen skal det stå "Join" og på den andre skal det stå
+"Create". Appen skal se slik ut:  
+![alt tag](http://heim.ifi.uio.no/uqtran/Applitude/Chat-app/button-screen.png)
+
+__Oppgave 2.2\: Routing__  
