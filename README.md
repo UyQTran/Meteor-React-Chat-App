@@ -1,4 +1,4 @@
-# Chat App med ReactJS og Meteor
+# Applitude - Chat App med ReactJS og Meteor
 
 ## 0: Forord ##
 Dette kurset er ment til nybegynnere i React og Javascript, men helt grunnleggende
@@ -189,7 +189,8 @@ render() {
 ```
 
 Ved å bruke krøllparanteser gjør oss i stand til å skrive Javascript i HTML kode, det blir en
-såkalt Javascript-modus. Man kan bytte på denne modusen til HTML ved å skrive HTML igjen inne
-i krøllparantesen og dette kan da gjentas i evigheter.
+såkalt Javascript-modus. Disse krøllparantesene kan kun inneholde ett uttrykk. Man kan bytte 
+på denne modusen til HTML ved å skrive HTML igjen inne i krøllparantesen og dette kan da 
+gjentas i evigheter.
 
 __Oppgave 2.2\: Legg til knapper__  
