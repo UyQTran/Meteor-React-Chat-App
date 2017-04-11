@@ -81,13 +81,48 @@ kun fungerer med meteor.
 
 ## 2: React ##
 
-__Oppgave 2.1\: Min chatteapp!__  
+__Oppgave 2.1\: Min chatteapp__  
 Endelig kan du begynne å kode! Nå skal du gi appen et navn. Gjør dette ved å endre på tittelen
 på nettsiden i client/main.html.
 
 Javascript filen imports/ui/App.jsx er den første komponenten til appen vår. Innholdet i denne
-blir vist helt på starten av appen. Akkurat nå er den helt tom så du kan prøve å legge til
-en h1 element med navnet på appen inne i div elementet slik:
+blir vist helt på starten av appen. Til å starte med så må vi laste inn Material-UI temaet inn i
+appen vår. Importer MuiThemeProvider ved å skrive følgende øverst i App.jsx filen:
+```javascript
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+```
+
+I render-funksjonen til App.jsx vil vi at alle barnekomponentene(alle komponentene som blir 
+brukt) til App-komponenten skal bruke dette temaet. Fuknsjonen skal da returnere noe som ser
+ut som HTML-kode med HTML-elementer slik:
+```javascript
+render() {
+   return (
+       <MuiThemeProvider></MuiThemeProvider>
+   );
+}
+```
+
+Vi vil helst ha minst mulig kode i denne komponenten akkurat som main-metoden i Java. 
+App-komponenten skal derfor bare ha en barnekomponent. Lag en ny komponent i imports/ui som 
+skal hete LandingPage.jsx og innholdet skal være, til å begynne med, veldig lik App.jsx:
+```javascript
+import React, { Component } from 'react';
+
+export default class LandingPage extends Component {
+
+    constructor(props) {
+        super(props);
+    }
+
+    render() {
+        return;
+    }
+}
+```
+
+Akkurat nå er den helt tom så du kan prøve å legge til
+en h1-element med navnet på appen inne i et div-element slik:
 ```javascript
 render() {
    return (
@@ -137,3 +172,5 @@ render() {
 Ved å bruke krøllparanteser gjør oss i stand til å skrive Javascript i HTML kode, det blir en
 såkalt Javascript-modus. Man kan bytte på denne modusen til HTML ved å skrive HTML igjen inne
 i krøllparantesen og dette kan da gjentas i evigheter.
+
+__Oppgave 2.2\: Legg til knapper__  
