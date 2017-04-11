@@ -66,4 +66,4 @@ kun fungerer med meteor.
 
 ## 2: React ##
 
-__Oppgave 2.1\: __  
+__Oppgave 2.1\: Hello World!__  
