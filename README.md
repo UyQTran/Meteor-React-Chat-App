@@ -1,12 +1,12 @@
-# Chat App med ReactJS og Meteor
+# Applitude - Chat App med ReactJS og Meteor
 
 ## 0: Forord ##
 Dette kurset er ment til nybegynnere i React og Javascript, men helt grunnleggende
 HTML-, CSS- og programmeringskunnskaper er forventet at du skal kunne. 
 
 __Oppgave 0.1\: Editor__  
-Kjør opp din favoritteditor/IDE! Jeg anbefaler IntelliJ, men Eclipse og Atom fungerer også
-helt fint. IntelliJ koster orginalt 500EUR i året, men som UiO student så kan du få det gratis
+Kjør opp din favoritteditor/IDE! Jeg anbefaler Webstorm, men Eclipse og Atom fungerer også
+helt fint. Webstorm koster orginalt 500EUR i året, men som UiO student så kan du få det gratis
 ved å registrere deg her(husk å bruke UiO e-posten din): https://www.jetbrains.com/student/
 
 __React__  
@@ -55,7 +55,7 @@ __Oppgave 1.6\: Sjekk!__
 Sjekk om alt er som det skal. Filen som heter "package.json" er en fil som beskriver
 hvilke biblioteker prosjektet er avhengig av. 
 
-```json
+```
 {
   "name": "chat-app",
   "private": true,
@@ -88,14 +88,14 @@ på nettsiden i client/main.html.
 Javascript filen imports/ui/App.jsx er den første komponenten til appen vår. Innholdet i denne
 blir vist helt på starten av appen. Til å starte med så må vi laste inn Material-UI temaet inn i
 appen vår. Importer MuiThemeProvider ved å skrive følgende øverst i App.jsx filen:
-```javascript
+```
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 ```
 
 I render-funksjonen til App.jsx vil vi at alle barnekomponentene(alle komponentene som blir 
 brukt) til App-komponenten skal bruke dette temaet. Fuknsjonen skal da returnere noe som ser
 ut som HTML-kode med HTML-elementer slik:
-```javascript
+```
 render() {
    return (
        <MuiThemeProvider></MuiThemeProvider>
@@ -106,7 +106,7 @@ render() {
 Vi vil helst ha minst mulig kode i denne komponenten akkurat som main-metoden i Java. 
 App-komponenten skal derfor bare ha en barnekomponent. Lag en ny komponent i imports/ui som 
 skal hete LandingPage.jsx og innholdet skal være, til å begynne med, veldig lik App.jsx:
-```javascript
+```
 import React, { Component } from 'react';
 
 export default class LandingPage extends Component {
@@ -123,7 +123,7 @@ export default class LandingPage extends Component {
 
 Akkurat nå er den helt tom så du kan prøve å legge til
 en h1-element med navnet på appen inne i et div-element slik:
-```javascript
+```
 render() {
    return (
        <div className="landing-page">
@@ -131,6 +131,25 @@ render() {
                 Ditt chat app navn her
             </h1>
        </div>
+   );
+}
+```
+React har litt andre navn på HTML-properties, men className er akkurat det samme som class i
+vanlig HTML og CSS. Klassen landing-page er en klasse som er forhåndsdefinert i prosjektet,
+men du må gjerne lage en egen i client/main.css.
+I App.jsx kan du nå importere LandingPage.jsx slik:
+```
+import LandingPage from './LandingPage.jsx';
+```
+
+Husk at alt av importering alltid skal være øverst i filen!  
+Videre så vil vi bruke LandingPage i App, men vi vil også wrappe temaet rundt LandingPage.
+```
+render() {
+   return (
+        <MuiThemeProvider>
+            <LandingPage />
+        </MuiThemeProvider>
    );
 }
 ```
@@ -147,7 +166,7 @@ Det er ikke god React kodeskikk å hardkode tekst i HTML kode, dette er kanskje 
 ren HTML, men dette kan i visse tilfeller tvinge React til å rendere elementer unødvendig. 
 Alt av tekst, verdier og funksjoner som skal bli brukt i render-funksjonen burde bli lagret i 
 state-objektet slik:
- ```javascript
+ ```
 this.state = {
     appName: 'Ditt chat app navn her'
 };
@@ -157,7 +176,7 @@ I javascript bruker vi ofte objekter som state. I koden over har state et attrib
 "appName" som er satt til teksten "Ditt chat app navn her".
 
 Videre skal vi bruke state-objektet vårt til å få tak i appnavnet på følgene måte:
-```javascript
+```
 render() {
    return (
        <div className="landing-page">
@@ -170,7 +189,26 @@ render() {
 ```
 
 Ved å bruke krøllparanteser gjør oss i stand til å skrive Javascript i HTML kode, det blir en
-såkalt Javascript-modus. Man kan bytte på denne modusen til HTML ved å skrive HTML igjen inne
-i krøllparantesen og dette kan da gjentas i evigheter.
+såkalt Javascript-modus. Disse krøllparantesene kan kun inneholde ett uttrykk. Man kan bytte 
+på denne modusen til HTML ved å skrive HTML igjen inne i krøllparantesen og dette kan da 
+gjentas i evigheter.
 
-__Oppgave 2.2\: Legg til knapper__  
+__Oppgave 2.2\: Knapper__  
+Akkurat som HTML så er det veldig lett å legge til knapper. Importer FlatButton fra 
+"material-ui/FlatButton" akkurat som du har gjort tidligere.
+
+Legg til to FlatButton-komponenter rett under h1-elementet i LandingPage. FlatButton har
+en property som heter "label". Denne propertien tar imot en tekststreng som bestemmer hva som
+skal stå på knappen. På den ene knappen skal det stå "Create" og på den andre skal det stå
+"Join". Appen skal se slik ut:  
+![alt tag](http://heim.ifi.uio.no/uqtran/Applitude/Chat-app/button-screen.png)
+
+__Oppgave 2.3\: Routing__  
+La oss nå kun fokusere på "Create"-knappen og dens funksjonalitet. Vi vil at denne knappen skal føre
+klienten til en ny side med nye komponenter og med en ny addresse. React støtter ikke dette helt for
+seg selv så vi trenger derfor FlowRouter som er et verktøy som håndterer routing for React apper. 
+FlowRouter ligger i et bibliotek som heter Kadira.
+Importer kadira med kommandoen "meteor npm install --save kadira"
+
+Flatbutton har en property, "onTouchTap", som tar imot en Javascript lambda-funksjon som blir kalt på 
+når knappen blir trykket på.

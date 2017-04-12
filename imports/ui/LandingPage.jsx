@@ -7,17 +7,19 @@ export default class LandingPage extends Component {
         super(props);
 
         this.state = {
-            appName: 'Chat App i state'
+            appName: 'Chat App'
         };
     }
 
 
     render() {
         return (
-            <div className="landing-page">
+            <div className="landing-page air-above">
                 <h1>
                     {this.state.appName}
                 </h1>
+                <FlatButton label="Create"/>
+                <FlatButton label="Join"/>
             </div>
         );
     }
