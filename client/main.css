@@ -1,10 +1,9 @@
 /* CSS declarations go here */
-body {
+.app-body {
     background: #fff;
-    color: #545454;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     margin: 0 auto;
-    padding: 2em 2em 4em;
+    padding: 2em 10em 4em;
 }
 
 .landing-page {
@@ -12,4 +11,8 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+}
+
+.chat-box {
+    width: 100%;
 }

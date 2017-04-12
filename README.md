@@ -44,7 +44,7 @@ Start appen ved å skrive kommandoen "meteor" og trykk enter, vent til Meteor er
 Åpne en nettleser og gå til addressen "localhost:3000"
 
 __Oppgave 1.4\: Installering av React__  
-Bruk kommandoen "meteor npm install --save react react-mounter react-dom react-tap-event-plugin" i terminal eller kommandolinje
+Bruk kommandoen "meteor npm install --save react react-komposer react-mounter react-dom react-tap-event-plugin" i terminal eller kommandolinje
 for å installere React-biblioteket  
 
 __Oppgave 1.5\: Installering av Material-UI__  
@@ -60,7 +60,7 @@ som er et verktøy som håndterer routing for React apper.
 FlowRouter ligger i et bibliotek som heter Kadira som allerede finnes i Meteor.
 Legg til FlowRouter i prosjektet med kommandoen "meteor add kadira:flow-router"
 
-__Oppgave 1.7\: Sjekk!__  
+__Oppgave 1.7\: Skjekk!__  
 Sjekk om alt er som det skal. Filen som heter "package.json" er en fil som beskriver
 hvilke biblioteker prosjektet er avhengig av. 
 
@@ -87,98 +87,49 @@ Hvis package-filen ser ut som bildet over kan du fortsette!
 __Oppgave 1 fullført! Hva har vi lært?__  
 * Hvordan vi installerer nye biblioteker med npm. Merk at kommandoen "meteor npm install"
 kun fungerer med meteor.
+* Hvor lett det er å bygge appen.
 
 
 ## 2: React ##
 
 __Oppgave 2.1\: Min chatteapp__  
-Endelig kan du begynne å kode! Nå skal du gi appen et navn. Gjør dette ved å endre på tittelen
-på nettsiden i client/main.html.
+Endelig kan du begynne å kode! La oss starte med å lage den aller første siden man ser i appen.
+Vi kaller denne for LandingPage, lag en fil med navn "LandingPage.jsx" i imports/ui.
 
-Javascript filen imports/ui/AppLaybout.jsx er den første komponenten til appen vår. Innholdet i denne
-blir vist helt på starten av appen. Til å starte med så må vi laste inn Material-UI temaet inn i
-appen vår. Importer MuiThemeProvider ved å skrive følgende øverst i AppLaybout.jsx filen:
-```
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-```
-
-I render-funksjonen til AppLaybout.jsx vil vi at alle barnekomponentene(alle komponentene som blir 
-brukt) til AppLayout-komponenten skal bruke dette temaet. Fuknsjonen skal da returnere noe som ser
-ut som HTML-kode med HTML-elementer slik:
-```
-render() {
-   return (
-       <article>
-           <MuiThemeProvider></MuiThemeProvider>
-       </article>
-   );
-}
-```
-
-Vi vil helst ha minst mulig kode i denne komponenten akkurat som main-metoden i Java. 
-AppLayout-komponenten skal derfor bare ha en barnekomponent. Lag en ny komponent i imports/ui som 
-skal hete LandingPage.jsx og innholdet skal være, til å begynne med, veldig lik AppLaybout.jsx:
-```
+ ```
 import React, { Component } from 'react';
 
 export default class LandingPage extends Component {
 
     constructor(props) {
         super(props);
+
+        this.state = {};
     }
+
 
     render() {
-        return;
+        return (
+            <div className="landing-page">
+                <h1>
+                    Ditt appnavn her
+                </h1>
+            </div>
+        );
     }
 }
-```
-
-Akkurat nå er den helt tom så du kan prøve å legge til
-en h1-element med navnet på appen inne i et div-element slik:
-```
-render() {
-   return (
-       <div className="landing-page">
-            <h1>
-                Ditt chat app navn her
-            </h1>
-       </div>
-   );
-}
-```
-React har litt andre navn på HTML-properties, men className er akkurat det samme som class i
-vanlig HTML og CSS. Klassen landing-page er en klasse som er forhåndsdefinert i prosjektet,
-men du må gjerne lage en egen i client/main.css.
-I AppLaybout.jsx kan du nå importere LandingPage.jsx slik:
-```
-import LandingPage from './LandingPage.jsx';
-```
-
-Husk at alt av importering alltid skal være øverst i filen!  
-Videre så vil vi bruke LandingPage i App, men vi vil også wrappe temaet rundt LandingPage.
-```
-render() {
-    return (
-        <article>
-            <MuiThemeProvider>
-                <div>
-                    <main>{this.props.body}</main>
-                </div>
-            </MuiThemeProvider>
-        </article>
-    );
-}
-```
-
-Lagre så skal appen være oppdatert hvis du allerede kjører meteor. Det kan ta litt tid på Windows, 
-men på Linux og Mac skal appen oppdateres nesten med en gang.
+ ```
 
 Forklaring:  
-Du har nettopp endret på en React-komponent. Komponenter har i hovedansvar i å rendere eller
-tegne opp hva den har blitt bedt om. Derfor er HTML perfekt til dette.
+Akkurat som klasser i Java så deklarer vi klasser i Javascript på nesten samme måte. Den eneste forskjellen er
+at vi må eksportere klassen i tillegg for at andre komponenter kan importere klassen. Ved at klassen arver 
+Component fra React gjør klassen om til en React komponent!
+Alle komponenter i React har en funksjon med navn "render" og en konstruktør som tar imot "props" eller properties
+som i HTML properties. 
+Funksjonen render tegner opp HTML-koden den returnerer.
 
 __Vent litt!__ Du har gjort noe som ikke er god React kodeskikk!  
-Det er ikke god React kodeskikk å hardkode tekst i HTML kode, dette er kanskje greit når du koder
+Det er ikke god kodeskikk i React å hardkode tekst i HTML kode, dette er kanskje greit når du koder
 ren HTML, men dette kan i visse tilfeller tvinge React til å rendere elementer unødvendig. 
 Alt av tekst, verdier og funksjoner som skal bli brukt i render-funksjonen burde bli lagret i 
 state-objektet slik:
@@ -209,7 +160,50 @@ såkalt Javascript-modus. Disse krøllparantesene kan kun inneholde ett uttrykk.
 på denne modusen til HTML ved å skrive HTML igjen inne i krøllparantesen og dette kan da 
 gjentas i evigheter.
 
-__Oppgave 2.2\: Knapper__  
+__Oppgave 2.2\: Routing__  
+For å kunne deklarere vår LandingPage som det aller første appen skal vise må vi lage en routing 
+for dette in FlowRouter. Alt av logikk i routing skal ligge i imports/startup/routes.jsx.
+
+I routes.jsx importer vår LandingPage slik:
+```
+import LandingPage from '../ui/LandingPage.jsx';
+```
+
+og legg til følgende kode:
+```
+FlowRouter.route('/', {
+    name: 'rootview',
+    action(props, {goToUrl}) {
+        mount(AppLayout, {
+            body: (<LandingPage/>)
+        });
+    }
+});
+```
+
+Forklaring:  
+FlowRouter er en modul som husker alt av routing mellom sider i appen vår. Om du vil legge 
+til en side i appen må du sende med logikk til FlowRouter før den kan bli aksessert. 
+
+FlowRouter har en funksjon, route, som tar imot to paramtere. 
+* Det første parameteren er hva som skal stå i lenken etter domenenavnet, for eksempel
+hello.com/parameter-tekst-her.
+* Det andre er et objekt som inneholder to attributter, name og en lamba-funksjon. Atributtet 
+name må alltid bli satt til en unik tekststreng, grunnen til dette er fordi vi senere skal 
+kalle på en funksjon som skal finne routes
+basert på navnet. 
+
+Lambda-funksjonen er en funksjon, action, parameter props som er eventuelle parametere som 
+skal bli sent med i action fra den siden vi går fra til den siden vi skal til.
+
+React-funksjonen mount forteller react hvilken komponent den skal kjøre funksjonen render på.
+Akkurat i vårt tillfelle så vil vi alltid kjøre render i AppLayout og heller sende inn
+eventuelle andre komponenter som vi vil skal rendere fordi vi vil kun ha en type layout.
+
+Skjekk appen nå med kommando "meteor" eller localhost:3000 på en nettleser hvis du allerede har
+meteor kjørende. Du skal nå se innholdet i komponenten LandingPage.
+
+__Oppgave 2.3\: Knapper__  
 Akkurat som HTML så er det veldig lett å legge til knapper. Importer FlatButton fra 
 "material-ui/FlatButton" akkurat som du har gjort tidligere.
 
@@ -219,9 +213,8 @@ skal stå på knappen. På den ene knappen skal det stå "Create" og på den and
 "Join". Appen skal se slik ut:  
 ![alt tag](http://heim.ifi.uio.no/uqtran/Applitude/Chat-app/button-screen.png)
 
-__Oppgave 2.3\: Routing__  
-La oss nå kun fokusere på "Create"-knappen og dens funksjonalitet. Vi vil at denne knappen skal føre
-klienten til en ny side med nye komponenter og med en ny addresse. 
+La oss nå kun fokusere på "Create"-knappen og dens funksjonalitet for nå. Vi vil at denne 
+knappen skal føre klienten til en ny side med nye komponenter og med en ny addresse. 
 
-Flatbutton har en property, "onTouchTap", som tar imot en Javascript lambda-funksjon som blir kalt på 
-når knappen blir trykket på.
+Flatbutton har en property, "onTouchTap", som tar imot en Javascript lambda-funksjon som 
+blir kalt på når knappen blir trykket på.

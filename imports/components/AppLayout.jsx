@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import { PropTypes } from 'react';
+import injectTapEventPlugin from 'react-tap-event-plugin';
+injectTapEventPlugin();
 
 export default class AppLayout extends Component {
 
@@ -11,19 +13,17 @@ export default class AppLayout extends Component {
 
     render() {
         return (
-            <article>
+            <div>
                 <MuiThemeProvider>
-                    <div>
+                    <div className="app-body">
                         <main>{this.props.body}</main>
                     </div>
                 </MuiThemeProvider>
-            </article>
+            </div>
         );
     }
 }
 
 AppLayout.propTypes = {
-    header: PropTypes.node.isRequired,
-    main: PropTypes.node.isRequired,
-    footer: PropTypes.node
+    body: PropTypes.node.isRequired
 };
