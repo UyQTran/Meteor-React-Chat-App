@@ -196,7 +196,9 @@ basert på navnet.
 Lambda-funksjonen er en funksjon, action, som igjen tar imot to parametere. 
 * props er eventuelle parametere som skal bli sent med i action fra den siden vi går fra
 til den siden vi skal til.
-* goToUrl er en tekstreng med lenken, som regel så er den lik lenken som blir sendt inn i route.
+* Det siste parameteret er en lambda-funksjon med goToUrl som paramter. Parameteren goToUrl
+er en tekstreng med lenken, som regel så er den lik lenken som blir sendt inn i route.
+Lambda-funksjonen skal alltid kjøre mount.
 
 React-funksjonen mount forteller react hvilken komponent den skal kjøre funksjonen render på.
 Akkurat i vårt tillfelle så vil vi alltid kjøre render i AppLayout og heller sende inn
