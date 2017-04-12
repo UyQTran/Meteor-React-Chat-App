@@ -1,5 +1,6 @@
+accounts-base@1.2.12_1
+alanning:roles@1.2.16
 allow-deny@1.0.5
-autopublish@1.0.7
 autoupdate@1.2.11
 babel-compiler@6.9.1_1
 babel-runtime@0.1.11_1
@@ -16,6 +17,7 @@ check@1.2.3
 ddp@1.2.5
 ddp-client@1.2.9
 ddp-common@1.2.6
+ddp-rate-limiter@1.0.5
 ddp-server@1.2.10
 deps@1.0.12
 diff-sequence@1.0.6
@@ -35,9 +37,11 @@ jquery@1.11.9
 kadira:flow-router@2.12.1
 launch-screen@1.0.12
 livedata@1.0.18
+localstorage@1.0.11
 logging@1.1.15_1
 meteor@1.2.17_1
 meteor-base@1.0.4
+meteorhacks:subs-manager@1.6.4
 minifier-css@1.2.14_1
 minifier-js@1.2.14_1
 minimongo@1.0.17
@@ -52,11 +56,13 @@ observe-sequence@1.0.13
 ordered-dict@1.0.8
 promise@0.8.7
 random@1.0.10
+rate-limit@1.0.5
 reactive-dict@1.1.8
 reactive-var@1.0.10
 reload@1.1.10
 retry@1.0.8
 routepolicy@1.0.11
+service-configuration@1.0.10
 shell-server@0.2.1
 spacebars@1.0.13
 spacebars-compiler@1.0.13

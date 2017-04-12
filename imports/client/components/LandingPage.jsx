@@ -17,7 +17,6 @@ export default class LandingPage extends Component {
 
     handleCreateButton() {
         const pin = PinGeneratorService.generatePin();
-        console.log(pin);
         FlowRouter.go('create-room', {pin});
     }
 

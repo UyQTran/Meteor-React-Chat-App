@@ -1,12 +1,11 @@
 import {Roles} from 'meteor/alanning:roles';
 import {FlowRouter} from 'meteor/kadira:flow-router';
-import {composeWithTracker} from 'react-komposer';
+import {compose} from 'react-komposer';
 import MessageBox from '../components/MessageBox.jsx';
-import {MessagesSubs} from '../../server/config.js';
-import {Messages} from '../../server/collections.js';
+import { Messages } from '/imports/api/collections.js';
+import { MessagesSubs } from '/imports/api/config.js';
 
 const MessageBoxComposer = ({roomNumber}, onData) => {
-
 
     const subsReady = [
         MessagesSubs.subscribe()
@@ -19,4 +18,4 @@ const MessageBoxComposer = ({roomNumber}, onData) => {
     }
 };
 
-export default composeWithTracker(MessageBoxComposer)(MessageBox);
+export default compose(MessageBoxComposer)(MessageBox);
