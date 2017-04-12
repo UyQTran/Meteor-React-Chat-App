@@ -193,12 +193,8 @@ name må alltid bli satt til en unik tekststreng, grunnen til dette er fordi vi 
 kalle på en funksjon som skal finne routes
 basert på navnet. 
 
-Lambda-funksjonen er en funksjon, action, som igjen tar imot to parametere. 
-* props er eventuelle parametere som skal bli sent med i action fra den siden vi går fra
-til den siden vi skal til.
-* Det siste parameteret er en lambda-funksjon med goToUrl som paramter. Parameteren goToUrl
-er en tekstreng med lenken, som regel så er den lik lenken som blir sendt inn i route.
-Lambda-funksjonen skal alltid kjøre mount.
+Lambda-funksjonen er en funksjon, action, parameter props som er eventuelle parametere som 
+skal bli sent med i action fra den siden vi går fra til den siden vi skal til.
 
 React-funksjonen mount forteller react hvilken komponent den skal kjøre funksjonen render på.
 Akkurat i vårt tillfelle så vil vi alltid kjøre render i AppLayout og heller sende inn
