@@ -44,7 +44,7 @@ Start appen ved å skrive kommandoen "meteor" og trykk enter, vent til Meteor er
 Åpne en nettleser og gå til addressen "localhost:3000"
 
 __Oppgave 1.4\: Installering av React__  
-Bruk kommandoen "meteor npm install --save react react-mounter react-dom react-tap-event-plugin" i terminal eller kommandolinje
+Bruk kommandoen "meteor npm install --save react react-komposer@2 react-mounter react-dom react-tap-event-plugin" i terminal eller kommandolinje
 for å installere React-biblioteket  
 
 __Oppgave 1.5\: Installering av Material-UI__  
@@ -54,11 +54,13 @@ GUI-elementene
 Bruk kommandoen "meteor npm install --save material-ui" i terminal eller kommandolinje
 for å installere React-biblioteket  
 
-__Oppgave 1.6\: Legg til FlowRouter__  
-React håndterer ikke flyten mellom forskjellige sider så vi trenger derfor FlowRouter 
-som er et verktøy som håndterer routing for React apper. 
+__Oppgave 1.6\: Legg til FlowRouter og diverse__  
+React har en\t innebygd router verktøy, men vi skal ikke bruke denne fordi det blir mye uryddig kode av det.
+FlowRouter er et verktøy for React som nettopp fikser dette og er mye lettere å lære.
 FlowRouter ligger i et bibliotek som heter Kadira som allerede finnes i Meteor.
-Legg til FlowRouter i prosjektet med kommandoen "meteor add kadira:flow-router"
+Legg til FlowRouter og andre viktige verktøy i prosjektet med kommandoen 
+"meteor add kadira:flow-router alanning:roles meteorhacks:subs-manager"
+
 
 __Oppgave 1.7\: Skjekk!__  
 Sjekk om alt er som det skal. Filen som heter "package.json" er en fil som beskriver
