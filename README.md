@@ -60,7 +60,7 @@ som er et verktøy som håndterer routing for React apper.
 FlowRouter ligger i et bibliotek som heter Kadira som allerede finnes i Meteor.
 Legg til FlowRouter i prosjektet med kommandoen "meteor add kadira:flow-router"
 
-__Oppgave 1.7\: Sjekk!__  
+__Oppgave 1.7\: Skjekk!__  
 Sjekk om alt er som det skal. Filen som heter "package.json" er en fil som beskriver
 hvilke biblioteker prosjektet er avhengig av. 
 
@@ -161,7 +161,49 @@ på denne modusen til HTML ved å skrive HTML igjen inne i krøllparantesen og d
 gjentas i evigheter.
 
 __Oppgave 2.2\: Routing__  
+For å kunne deklarere vår LandingPage som det aller første appen skal vise må vi lage en routing 
+for dette in FlowRouter. Alt av logikk i routing skal ligge i imports/startup/routes.jsx.
 
+I routes.jsx importer vår LandingPage slik:
+```
+import LandingPage from '../ui/LandingPage.jsx';
+```
+
+og legg til følgende kode:
+```
+FlowRouter.route('/', {
+    name: 'rootview',
+    action(props, {goToUrl}) {
+        mount(AppLayout, {
+            body: (<LandingPage/>)
+        });
+    }
+});
+```
+
+Forklaring:  
+FlowRouter er en modul som husker alt av routing mellom sider i appen vår. Om du vil legge 
+til en side i appen må du sende med logikk til FlowRouter før den kan bli aksessert. 
+
+FlowRouter har en funksjon, route, som tar imot to paramtere. 
+* Det første parameteren er hva som skal stå i lenken etter domenenavnet, for eksempel
+hello.com/parameter-tekst-her.
+* Det andre er et objekt som inneholder to attributter, name og en lamba-funksjon. Atributtet 
+name må alltid bli satt til en unik tekststreng, grunnen til dette er fordi vi senere skal 
+kalle på en funksjon som skal finne routes
+basert på navnet. 
+
+Lambda-funksjonen er en funksjon, action, som igjen tar imot to parametere. 
+* props er eventuelle parametere som skal bli sent med i action fra den siden vi går fra
+til den siden vi skal til.
+* goToUrl er en tekstreng med lenken, som regel så er den lik lenken som blir sendt inn i route.
+
+React-funksjonen mount forteller react hvilken komponent den skal kjøre funksjonen render på.
+Akkurat i vårt tillfelle så vil vi alltid kjøre render i AppLayout og heller sende inn
+eventuelle andre komponenter som vi vil skal rendere fordi vi vil kun ha en type layout.
+
+Skjekk appen nå med kommando "meteor" eller localhost:3000 på en nettleser hvis du allerede har
+meteor kjørende. Du skal nå se innholdet i komponenten LandingPage.
 
 __Oppgave 2.3\: Knapper__  
 Akkurat som HTML så er det veldig lett å legge til knapper. Importer FlatButton fra 
@@ -173,8 +215,8 @@ skal stå på knappen. På den ene knappen skal det stå "Create" og på den and
 "Join". Appen skal se slik ut:  
 ![alt tag](http://heim.ifi.uio.no/uqtran/Applitude/Chat-app/button-screen.png)
 
-La oss nå kun fokusere på "Create"-knappen og dens funksjonalitet. Vi vil at denne knappen skal føre
-klienten til en ny side med nye komponenter og med en ny addresse. 
+La oss nå kun fokusere på "Create"-knappen og dens funksjonalitet for nå. Vi vil at denne 
+knappen skal føre klienten til en ny side med nye komponenter og med en ny addresse. 
 
-Flatbutton har en property, "onTouchTap", som tar imot en Javascript lambda-funksjon som blir kalt på 
-når knappen blir trykket på.
+Flatbutton har en property, "onTouchTap", som tar imot en Javascript lambda-funksjon som 
+blir kalt på når knappen blir trykket på.
