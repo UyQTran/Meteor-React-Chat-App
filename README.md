@@ -454,3 +454,27 @@ messages() {
     return Messages.find().fetch();
 }
 ```
+
+Nå som vi har dataene vi ville ha, kan vi vise dem i render. Her er det mye frihet, et simpelt forslag er å gjøre
+det slik:
+```
+render() {
+    const messageList = this.messages();
+    return (
+        <div>
+            {messageList.map((message, index)=>{
+                return (
+                    <p key={index}>
+                        {message.messageString}
+                    </p>
+                );
+            })}
+        </div>
+    );
+}
+```
+
+__Oppgave 4.1\: Join__  
+Helt tilbake til knappen for Join i LandingPage, knappen er fortsatt helt tom og har ingen funksjonalitet. Bruk
+det du har lært for å lage en side som spør brukeren om en pin-kode og fører brukeren til riktig chatrom.
+Siden kan se slik ut:
