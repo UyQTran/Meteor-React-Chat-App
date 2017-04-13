@@ -11,6 +11,11 @@ ved å registrere deg her(husk å bruke UiO e-posten din): https://www.jetbrains
 
 Hvis du velger å bruke Eclipse så husk å bruke Javascript versjonen.
 
+__Oppgave 0.2\: Nettleser__  
+I dette kurset anbefaler jeg å bruke Google Chrome som nettleser for å teste appen. Google Chrome
+har en utvidelse som heter React Developer Tools hjelper nettleresen å forstå hvordan appen vår fungerer
+som gjør det lettere for oss å analysere appen.
+
 __React__  
 React er et front-end rammeverk som håndterer logikk på brukergrensesnittet til appen vår. Her bruker vi
 konsepter som heter Components som er det som håndterer alt av rendering og visning av brukergrensesnittet.
