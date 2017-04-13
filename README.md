@@ -123,7 +123,7 @@ export default class LandingPage extends Component {
  ```
 
 Forklaring:  
-Akkurat som klasser i Java så deklarer vi klasser i Javascript på nesten samme måte. Den eneste forskjellen er
+Akkurat som klasser i Java så deklarerer vi klasser i Javascript på nesten samme måte. Den eneste forskjellen er
 at vi må eksportere klassen i tillegg for at andre komponenter kan importere klassen. Ved at klassen arver 
 Component fra React gjør klassen om til en React komponent!
 Alle komponenter i React har en funksjon med navn "render" og en konstruktør som tar imot "props" eller properties
