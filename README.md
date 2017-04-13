@@ -330,6 +330,9 @@ det brukeren tastet på tastaturet.
 Importer komponenten TextField i ChatPage og fyll inn valgfri tekst i hintText og sett fullWidth til true.
 Husk at true og false er verdier i Javascript, men ikke i HTML.
 
+For å ta vare på verdien i tekstfeltet så må vi ha et attributt i state. Kall denne for textFieldValue og sett den
+til å være tom. Du kan deretter sette propertyen value i TextField til å bli lik this.state.textFieldValue.
+
 Legg til følgende funksjon i ChatPage:
 ```
 handleTextFieldChange(event, newValue) {
@@ -342,3 +345,112 @@ Attributtet state kan ikke bli endret direkte uten videre så derfor må vi bruk
 som skjer i en egen programflyt) på setState. Funksjonen setState tar imot et objekt med attributter du vil
 endre på eller legge til i state.
 
+__Oppgave 3.2\: MongoDB__  
+For å kunne lagre alle meldingene i appen så må det bli lagret i en database. Meteor følger med MongoDB
+som er på veldig mange måter lett å bruke. 
+
+Importer MongoDB og deklarer en collection med navn Messages i imports/api/collections.js:
+```
+import { Mongo } from 'meteor/mongo';
+
+const Messages = new Mongo.Collection('messages');
+
+export {
+    Messages
+};
+
+export default {
+    Messages
+};
+```
+
+Forklaring:  
+Messages er en collection eller en tabell i databasen vår.
+
+Nå blir du nødt til å avslutte Meteor hvis du har den kjørende i en termninal. Du skal nemlig fjerne en pakke
+som er inkludert i prosjektet fra før. Gjør dette ved å kjøre kommandoen "meteor remove autopublish".
+
+Forklaring:
+autopublish er et verktøy som fjerner veldig mye logikk fra databasen vår ved å gi alle klienter tilgang til
+all data i en gitt collection. Dette er ikke så bra for oss fordi vi vil ha flere chatrom. Tenk hvis alle
+hadde sett alle sine meldinger uavhengig av hvilket rom du er i. Fyr opp meteor igjen og fortsett!
+
+Inkluder følgende kode i publicasions.js:
+```
+import { Messages } from '/imports/api/collections.js';
+
+Meteor.publish('messages.byRoomNumber', (roomNumber) => {
+    return Messages.find({roomNumber});
+});
+```
+
+Forklaring:  
+Vi legger til en logikk i databasen vår slik at serveren kun kan sende data til klienten som klienten spør om.
+Med andre ord, klienten må vite romnummeret til chatrommet for å kunne få tak i data derfra.
+
+Nå må vi lage en databasespørring (databasekode) slik at vi kan legge til data i databasen. Denne funksjonaliteten
+må være tilgjenglig for klienten så dette blir da gjort i imports/startup/api/methods.js. Legg til følgende kode:
+```
+import { Messages } from '/imports/api/collections.js';
+
+Meteor.methods({
+    addMessage(roomNumber, messageString) {
+        const message = {roomNumber, messageString};
+
+        return Messages.insert(message);
+    }
+});
+```
+
+Forklaring:  
+Akkurat som publish så putter vi inn logikk i Meteor bare at denne logikken gjør at vi kan legge til data i databasen.
+
+Nå skal vi tilbake til komponenten ChatPage igjen og lage funksjonen handleKeyDown og ta i bruk databasen vår.
+Legg til følgende kode i ChatPage:
+```
+handleKeyDown({keyCode}) {
+    if(keyCode === 13) {
+        Meteor.call('addMessage', this.props.roomNumber, this.state.textFieldValue);
+        this.setState({textFieldValue:''});
+    }
+}
+```
+
+Forklaring:  
+TextField sin onKeyDown property tar imot en funksjon og putter inn ett objekt som blant annet inneholder
+keyCode. Når keyCode er like 13 så har brukeren trykker på enter-tasten. Vi bruker da Meteor.call() som
+tar imot navnet på Meteor metoden vi lagde tidligere i publications.js og paramtere til den gitte metoden
+og setter tekstfeltet til å være tomt igjen.
+
+Husk å gjøre disse "bærbare" ved å knytte scopet til ChatPage til begge funksjonene i konstruktøren. Så kan du
+sende handleKeyDown til propertyen onKeyDown.
+
+__Oppgave 3.3\: Data fetching__  
+Nå har du klart å sette data inn i databasen, men det er ikke nyttig hvis man ikke kan se det på appen.
+Det er vanlig i React å dele opp komponenter i flere deler når de etterhvert blir store. Lag en ny
+komponent med navn MessageBox med samme struktur som de andre komponentene. Denne komponenten skal være litt
+annerledes med at det er en komponent som også har logikk på data og skal derfor ha en annen type 
+klassedeklarasjon:
+```
+export default class MessageBox extends TrackerReact(Component)
+```
+
+Til dette må vi importere TrackerReact fra meteor/ultimatejs:tracker-react. Som en regel vi har satt for oss
+selv så må vi definere hva slags data vi vil ha fra databasen for å kunne få data i det hele tatt. Vi trenger
+roomNumber for dette så det kan vi få fra props. Vi sier til Meteor hvilke data vi vil ha ved å ha et kall på
+subscribe i en subscription attributt i state:
+```
+this.state = {
+    subscription: {
+        messages: Meteor.subscribe('messages.byRoomNumber', props.roomNumber)
+    }
+};
+```
+
+For å faktisk hente denne dataen må vi han en funksjon som gjør en spørring på hva enn den kan få fra databasen.
+Legg til denne funksjonen slik:
+```
+messages() {
+    return Messages.find().fetch();
+}
+```
