@@ -9,6 +9,8 @@ Kjør opp din favoritteditor/IDE! Jeg anbefaler Webstorm, men Eclipse og Atom fu
 helt fint. Webstorm koster orginalt 500EUR i året, men som UiO student så kan du få det gratis
 ved å registrere deg her(husk å bruke UiO e-posten din): https://www.jetbrains.com/student/
 
+Hvis du velger å bruke Eclipse så husk å bruke Javascript versjonen.
+
 __React__  
 React er et front-end rammeverk som håndterer logikk på brukergrensesnittet til appen vår. Her bruker vi
 konsepter som heter Components som er det som håndterer alt av rendering og visning av brukergrensesnittet.
@@ -216,5 +218,127 @@ skal stå på knappen. På den ene knappen skal det stå "Create" og på den and
 La oss nå kun fokusere på "Create"-knappen og dens funksjonalitet for nå. Vi vil at denne 
 knappen skal føre klienten til en ny side med nye komponenter og med en ny addresse. 
 
-Flatbutton har en property, "onTouchTap", som tar imot en Javascript lambda-funksjon som 
-blir kalt på når knappen blir trykket på.
+FlatButton har en property, "onTouchTap", som tar imot en Javascript-funksjon som 
+blir kalt på når knappen blir trykket på. Når vi trykker på knappen så vil vi bli ført
+til et nytt chatterom med en random generert pin-kode. Da må vi ta i bruk av FlowRouter igjen.
+
+For å generere en random pin-kode så finnes det et verktøy for dette allerede i prosjektet som
+heter PinGeneratorService. Importer denne slik:
+
+```
+import PinGeneratorService from '../services/PinGeneratorService.jsx';
+```
+
+Importer FlowRouter som du har gjort i routes.js. Nå kan vi lage en lambda-funksjon som
+sender oss til en ny side slik:
+```
+render() {
+    return (
+        <div className="landing-page">
+            <h1>
+                {this.state.appName}
+            </h1>
+            <FlatButton
+                label="Create"
+                onTouchTap={()=>{
+                    const pin = PinGeneratorService.generatePin();
+                    FlowRouter.go('chat-room', {pin:pin});
+                }}/>
+            <FlatButton label="Join"/>
+        </div>
+    );
+}
+```
+
+Forklaring:  
+Lambda-funksjoner i Javascript har formen (<par1>,<parX>)=>{<kode>}. Disse funksjonene er navnløse
+og selve koden er bare referansen til funksjonen. Altså den funksjonen som blir ikke kalt på med en
+gang fordi vi kune sender referansen inn til FlatButton. FlowRouter sin go-funksjon tar imot navnet
+på routen knappen skal føre til og tar imot eventuelle parametere i et objekt.
+
+__Vent litt!__ Du har skrevet ineffektiv kode! Alle referanser av lambda-funksjoner i Javascript har sin
+helt egne unike id. Dette gjør at React tror at vi sender inn forskjellige funksjoner hver gang LandingPage
+blir endret litt på. Med andre ord, FlatButton for Create blir renderet unødvendig flere ganger enn det den
+trenger.
+
+Vi fikser dette ved å flytte funksjonen vår ut av render. Istedet for å lage en lambda funksjon så kan vi
+heller lage en vanlig funksjon og sende den referanser inn i onTouchTap:
+```
+handleCreateButton() {
+    const pin = PinGeneratorService.generatePin();
+    FlowRouter.go('chat-room', {pin:pin});
+}
+```
+
+For å gjøre denne funksjonen "bærbar" så må vi knytte LandingPage til funksjonen. Dette gjør vi i 
+konstruktøren slik:
+```
+this.handleCreateButton = this.handleCreateButton.bind(this);
+```
+
+Så kan vi endelig sende med referansen til denne funksjonen i onTouchTap slik:
+```
+render() {
+    return (
+        <div className="landing-page">
+            <h1>
+                {this.state.appName}
+            </h1>
+            <FlatButton
+                label="Create"
+                onTouchTap={this.handleCreateButton}/>
+            <FlatButton label="Join"/>
+        </div>
+    );
+}
+```
+
+Nå må vi lage den nye siden og tilsvarende route til den.
+
+__Oppgave 2.4\: ChatPage__  
+Vi vil ha selve chattefunksjonaliteten i en helt egen side så lag en fil med navn "ChatPage.jsx"
+i imports/client/components. Fyll filen med klasse-, konstruktør-, state-, og render-deklarasjoner
+akkurat som du har gjort i LandingPage.jsx. Husk også å importere React!
+
+Nå gjenstår det å lage en route til denne siden i routes.js. Importer ChatPage og legg til følgende 
+kode i routes.js:
+```
+FlowRouter.route('/chat-room/:pin', {
+    name: 'chat-room',
+    action({pin}) {
+        mount(AppLayout, {
+            body: (<ChatPage roomNumber={pin}/>)
+        });
+    }
+});
+```
+
+__Oppgave 3.1\: TextField__  
+Material-UI følger med et ganske fint tekstfelt som vi kan bruke. Komponenten heter TextField og har
+en rekke properties vi skal bruke.
+* hintText tar imot en tekststreng og viser denne strengen når tekstfeltet er tomt
+* fullWidth tar imot en bolsk verdi, enten true eller false, som bestemmer om tekstfeltet skal prøve å ta
+mest mulig tilgjengelig plass
+* onChange tar imot en funksjon som blir kalt på hver gang noen skjer i tekstfeltet, enten sletting eller
+skriving. onChange sender inn to parametere, newValue og event som ikke er så viktig til vårt behov. newValue
+er den mest oppdaterte strengen som er skrevet i teksfeltet.
+* onKeyDown tar også imot en funksjon og blir kalt på etter hvert tastetrykk fra tastatur. Den er veldig lik
+onChange i den forstand, men den sender inn en viktig parameter, keyCode, som er et heltall som representerer
+det brukeren tastet på tastaturet.
+* value tar imot en tekststreng og er det som er skrevet i tekstfeltet.
+
+Importer komponenten TextField i ChatPage og fyll inn valgfri tekst i hintText og sett fullWidth til true.
+Husk at true og false er verdier i Javascript, men ikke i HTML.
+
+Legg til følgende funksjon i ChatPage:
+```
+handleTextFieldChange(event, newValue) {
+    this.setState({textFieldValue:newValue});
+}
+```
+
+Forklaring:  
+Attributtet state kan ikke bli endret direkte uten videre så derfor må vi bruke et asynkront kall (et kall
+som skjer i en egen programflyt) på setState. Funksjonen setState tar imot et objekt med attributter du vil
+endre på eller legge til i state.
+
