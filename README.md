@@ -492,5 +492,5 @@ Siden kan se slik ut:
 
 __Videre__  
 Dette er bare begynnelses, skjellettet på appen. Det er mye mer man kan gjøre som er mye morsommere. Alt fra
-farger, animasjoner, brukere og mer robusthet kan blir lagt til i appen. Bli med i neste kurs når vi går
-enda mer i dybden på Meteor og React!
+farger, animasjoner, brukere, mer fonksjonalitet og mer robusthet kan blir lagt til i appen. Bli med i neste kurs 
+når vi går enda mer i dybden på Meteor og React!
