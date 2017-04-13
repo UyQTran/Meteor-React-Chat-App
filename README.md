@@ -141,7 +141,7 @@ this.state = {
 };
  ```
  
-I javascript bruker vi ofte objekter som state. I koden over har state et attributt som heter
+I Javascript bruker vi ofte objekter som state. I koden over har state et attributt som heter
 "appName" som er satt til teksten "Ditt chat app navn her".
 
 Videre skal vi bruke state-objektet vårt til å få tak i appnavnet på følgene måte:
