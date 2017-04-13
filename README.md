@@ -319,6 +319,9 @@ __Oppgave 2 fullført! Hva har vi lært?__
 * Hvordan React er en blanding av HTML og Javascript
 * Litt om hva som skjer bak kulissene i React.
 
+
+## 3: Database ##
+
 __Oppgave 3.1\: TextField__  
 Material-UI følger med et ganske fint tekstfelt som vi kan bruke. Komponenten heter TextField og har
 en rekke properties vi skal bruke.
