@@ -2,7 +2,7 @@
 
 ## 0: Forord ##
 Dette kurset er ment til nybegynnere i React og Javascript, men helt grunnleggende
-HTML-, CSS- og programmeringskunnskaper er forventet at du skal kunne. 
+HTML- og programmeringskunnskaper er forventet at du skal kunne. 
 
 __Oppgave 0.1\: Editor__  
 Kjør opp din favoritteditor/IDE! Jeg anbefaler Webstorm, men Eclipse og Atom fungerer også
