@@ -478,3 +478,4 @@ __Oppgave 4.1\: Join__
 Helt tilbake til knappen for Join i LandingPage, knappen er fortsatt helt tom og har ingen funksjonalitet. Bruk
 det du har lært for å lage en side som spør brukeren om en pin-kode og fører brukeren til riktig chatrom.
 Siden kan se slik ut:
+![alt tag](http://heim.ifi.uio.no/uqtran/Applitude/Chat-app/join-page.png)
