@@ -313,6 +313,12 @@ FlowRouter.route('/chat-room/:pin', {
 });
 ```
 
+__Oppgave 2 fullført! Hva har vi lært?__
+* Hvordan skrive logikk for knapper
+* Hvordan opprette komponenter i React
+* Hvordan React er en blanding av HTML og Javascript
+* Litt om hva som skjer bak kulissene i React.
+
 __Oppgave 3.1\: TextField__  
 Material-UI følger med et ganske fint tekstfelt som vi kan bruke. Komponenten heter TextField og har
 en rekke properties vi skal bruke.
@@ -474,8 +480,17 @@ render() {
 }
 ```
 
+__Oppgave 3 fullført! Hva har vi lært?__
+* Hvordan håndtere logikk for tekstfelter
+* Hvor lett det er å sette opp en MongoDB database og bruke den.
+
 __Oppgave 4.1\: Join__  
 Helt tilbake til knappen for Join i LandingPage, knappen er fortsatt helt tom og har ingen funksjonalitet. Bruk
 det du har lært for å lage en side som spør brukeren om en pin-kode og fører brukeren til riktig chatrom.
 Siden kan se slik ut:
 ![alt tag](http://heim.ifi.uio.no/uqtran/Applitude/Chat-app/join-page.png)
+
+__Videre__
+Dette er bare begynnelses, skjellettet på appen. Det er mye mer man kan gjøre som er mye morsommere. Alt fra
+farger, animasjoner, brukere og mer robusthet kan blir lagt til i appen. Bli med i neste kurs når vi går
+enda mer i dybden på Meteor og React!
