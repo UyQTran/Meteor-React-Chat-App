@@ -488,7 +488,7 @@ render() {
 }
 ```
 
-__Oppgave 3 fullført! Hva har vi lært?__
+__Oppgave 3 fullført! Hva har vi lært?__  
 * Hvordan håndtere logikk for tekstfelter
 * Hvor lett det er å sette opp en MongoDB database og bruke den
 
