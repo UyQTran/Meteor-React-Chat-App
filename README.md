@@ -59,7 +59,7 @@ React har en\t innebygd router verktøy, men vi skal ikke bruke denne fordi det 
 FlowRouter er et verktøy for React som nettopp fikser dette og er mye lettere å lære.
 FlowRouter ligger i et bibliotek som heter Kadira som allerede finnes i Meteor.
 Legg til FlowRouter og andre viktige verktøy i prosjektet med kommandoen 
-"meteor add kadira:flow-router alanning:roles meteorhacks:subs-manager ultimatejs:tracker-react"
+"meteor add kadira:flow-router alanning:roles ultimatejs:tracker-react"
 
 
 __Oppgave 1.7\: Skjekk!__  
@@ -485,15 +485,15 @@ render() {
 
 __Oppgave 3 fullført! Hva har vi lært?__
 * Hvordan håndtere logikk for tekstfelter
-* Hvor lett det er å sette opp en MongoDB database og bruke den.
+* Hvor lett det er å sette opp en MongoDB database og bruke den
 
 __Oppgave 4.1\: Join__  
 Helt tilbake til knappen for Join i LandingPage, knappen er fortsatt helt tom og har ingen funksjonalitet. Bruk
-det du har lært for å lage en side som spør brukeren om en pin-kode og fører brukeren til riktig chatrom.
+det du har lært for å lage en side som spør brukeren om en pin-kode og fører brukeren til riktig chat-rom.
 Siden kan se slik ut:
 ![alt tag](http://heim.ifi.uio.no/uqtran/Applitude/Chat-app/join-page.png)
 
 __Videre__  
-Dette er bare begynnelses, skjellettet på appen. Det er mye mer man kan gjøre som er mye morsommere. Alt fra
+Dette er bare begynnelsen, skjellettet på appen. Det er mye mer man kan gjøre som er mye morsommere. Alt fra
 farger, animasjoner, brukere, mer fonksjonalitet og mer robusthet kan blir lagt til i appen. Bli med i neste kurs 
 når vi går enda mer i dybden på Meteor og React!
