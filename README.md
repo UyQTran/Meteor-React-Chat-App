@@ -11,9 +11,7 @@ ved å registrere deg her(husk å bruke UiO e-posten din): https://www.jetbrains
 
 __React__  
 React er et front-end rammeverk som håndterer logikk på brukergrensesnittet til appen vår. Her bruker vi
-konsepter som heter Components og Containers der Components er det som håndterer alt av rendering og visning av
-brukergrensesnittet, mens Containers håndterer alt av databasespørringer og behandling av data som skal videre bli
-sendt til Components.
+konsepter som heter Components som er det som håndterer alt av rendering og visning av brukergrensesnittet.
 
 Mer dokumentasjon om React: https://facebook.github.io/react/docs/hello-world.html
 React sin livssykel: https://facebook.github.io/react/docs/react-component.html
@@ -44,7 +42,7 @@ Start appen ved å skrive kommandoen "meteor" og trykk enter, vent til Meteor er
 Åpne en nettleser og gå til addressen "localhost:3000"
 
 __Oppgave 1.4\: Installering av React__  
-Bruk kommandoen "meteor npm install --save react react-komposer@2 react-mounter react-dom react-tap-event-plugin" i terminal eller kommandolinje
+Bruk kommandoen "meteor npm install --save react react-mounter react-dom react-tap-event-plugin" i terminal eller kommandolinje
 for å installere React-biblioteket  
 
 __Oppgave 1.5\: Installering av Material-UI__  
@@ -59,7 +57,7 @@ React har en\t innebygd router verktøy, men vi skal ikke bruke denne fordi det 
 FlowRouter er et verktøy for React som nettopp fikser dette og er mye lettere å lære.
 FlowRouter ligger i et bibliotek som heter Kadira som allerede finnes i Meteor.
 Legg til FlowRouter og andre viktige verktøy i prosjektet med kommandoen 
-"meteor add kadira:flow-router alanning:roles meteorhacks:subs-manager"
+"meteor add kadira:flow-router alanning:roles meteorhacks:subs-manager ultimatejs:tracker-react"
 
 
 __Oppgave 1.7\: Skjekk!__  
@@ -96,7 +94,7 @@ kun fungerer med meteor.
 
 __Oppgave 2.1\: Min chatteapp__  
 Endelig kan du begynne å kode! La oss starte med å lage den aller første siden man ser i appen.
-Vi kaller denne for LandingPage, lag en fil med navn "LandingPage.jsx" i imports/ui.
+Vi kaller denne komponenten LandingPage, lag en fil med navn "LandingPage.jsx" i imports/client/components.
 
  ```
 import React, { Component } from 'react';
@@ -164,7 +162,7 @@ gjentas i evigheter.
 
 __Oppgave 2.2\: Routing__  
 For å kunne deklarere vår LandingPage som det aller første appen skal vise må vi lage en routing 
-for dette in FlowRouter. Alt av logikk i routing skal ligge i imports/startup/routes.jsx.
+for dette in FlowRouter. Alt av logikk i routing skal ligge i imports/startup/client/routes.jsx.
 
 I routes.jsx importer vår LandingPage slik:
 ```
