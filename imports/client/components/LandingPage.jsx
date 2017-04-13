@@ -13,11 +13,16 @@ export default class LandingPage extends Component {
         };
 
         this.handleCreateButton = this.handleCreateButton.bind(this);
+        this.handleJoinButton = this.handleJoinButton.bind(this);
     }
 
     handleCreateButton() {
         const pin = PinGeneratorService.generatePin();
-        FlowRouter.go('create-room', {pin});
+        FlowRouter.go('chat-room', {pin});
+    }
+
+    handleJoinButton() {
+        FlowRouter.go('join');
     }
 
     render() {
@@ -29,7 +34,9 @@ export default class LandingPage extends Component {
                 <FlatButton
                     label="Create"
                     onTouchTap={this.handleCreateButton}/>
-                <FlatButton label="Join"/>
+                <FlatButton
+                    label="Join"
+                    onTouchTap={this.handleJoinButton}/>
             </div>
         );
     }
