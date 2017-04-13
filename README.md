@@ -490,7 +490,7 @@ det du har lært for å lage en side som spør brukeren om en pin-kode og fører
 Siden kan se slik ut:
 ![alt tag](http://heim.ifi.uio.no/uqtran/Applitude/Chat-app/join-page.png)
 
-__Videre__
+__Videre__  
 Dette er bare begynnelses, skjellettet på appen. Det er mye mer man kan gjøre som er mye morsommere. Alt fra
 farger, animasjoner, brukere og mer robusthet kan blir lagt til i appen. Bli med i neste kurs når vi går
 enda mer i dybden på Meteor og React!
