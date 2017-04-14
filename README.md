@@ -38,6 +38,7 @@ __OBS!__ Oppgave 1.4 og 1.5 er allerede gjort i prekoden, gjør disse kun hvis d
 
 __Oppgave 1.1\: Oppsett på egen maskin__  
 Last ned og installer Meteor: https://www.meteor.com/install
+Last ned og installer NodeJS: https://nodejs.org/en/
 
 __Oppgave 1.2\: Last ned prekoden__  
 Scroll helt øverst på denne siden og trykk på den grønne knappen "Clone or download" og trykk på "download ZIP"  
