@@ -22,6 +22,8 @@ I dette kurset anbefaler jeg å bruke Google Chrome som nettleser for å teste a
 har en utvidelse som heter React Developer Tools hjelper nettleresen å forstå hvordan appen vår fungerer
 som gjør det lettere for oss å analysere appen.
 
+Google Chrome: https://www.google.com/chrome/browser/desktop/index.html
+
 __React__  
 React er et front-end bibliotek som håndterer logikk på brukergrensesnittet til appen vår. Her bruker vi
 konsepter som heter Components som er det som håndterer alt av rendering og visning av brukergrensesnittet.
