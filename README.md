@@ -1,10 +1,10 @@
 # Applitude - Chat App med ReactJS og Meteor
 ##### Innhold  
-[Oppgave 0: Forord](#fordord)  
+[Oppgave 0: Forord](#forord)  
 [Oppgave 1: Oppsett](#oppsett)  
 [Oppgave 2: React](#react)  
 [Oppgave 3: Database](#database)  
-<a name="fordord"/>
+<a name="forord"/>
 ## Oppgave 0: Forord
 Dette kurset er ment til nybegynnere i React og Javascript, men helt grunnleggende
 HTML- og programmeringskunnskaper er forventet at du skal kunne. Med andre ord, om du
@@ -38,7 +38,7 @@ og lett å bruke, tilnærmet ingen databasekunnskaper trengs for å begynne.
 
 Mer dokumentasjon om Meteor: http://docs.meteor.com/#/full/
 <a name="oppsett"/>
-## Oppgave 1: Oppsett ##
+## Oppgave 1: Oppsett
 __OBS!__ Oppgave 1.4 og 1.5 er allerede gjort i prekoden, gjør disse kun hvis du skal sette opp egne prosjekter.
 
 __Oppgave 1.1\: Oppsett på egen maskin__  
@@ -107,8 +107,8 @@ kun fungerer med meteor.
 * Hvor lett det er å bygge appen.
 <a name="react"/>
 ## Oppgave 2: React
-Endelig kan du begynne å kode! La oss starte med å lage den aller første siden man ser i appen.
 __Oppgave 2.1\: Min chatteapp__  
+Endelig kan du begynne å kode! La oss starte med å lage den aller første siden man ser i appen.
 Vi kaller denne komponenten LandingPage, lag en fil med navn "LandingPage.jsx" i imports/client/components.
 
  ```
