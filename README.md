@@ -68,7 +68,7 @@ __Oppgave 1.5\: Installering av Material-UI__
 Material-UI er et GUI-bibliotek av Google som tar i bruk av Material Design. Material-UI er skreddersydd til
 React noe som gjør det mye lettere å bruke. Er du en Android bruker så er du sikkert allerede kjent med 
 GUI-elementene.
-Bruk denne kommandoen i terminalen for å installere Material-UI biblioteket
+Bruk denne kommandoen i terminalen for å installere Material-UI biblioteket:
 ```
 meteor npm install --save material-ui
 ```
