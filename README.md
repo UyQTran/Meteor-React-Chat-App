@@ -7,7 +7,7 @@
 [Database](#database) 
 
 <a name="forord"/>
-## Forord ##
+## Forord 
 
 Dette kurset er ment til nybegynnere i React og Javascript, men helt grunnleggende
 HTML- og programmeringskunnskaper er forventet at du skal kunne. Med andre ord, om du
@@ -111,7 +111,7 @@ kun fungerer med meteor.
 * Hvor lett det er å bygge appen.
 
 <a name="react"/>
-## React ##
+## React 
 
 __Oppgave 2.1\: Min chatteapp__  
 Endelig kan du begynne å kode! La oss starte med å lage den aller første siden man ser i appen.
@@ -339,7 +339,7 @@ __Oppgave 2 fullført! Hva har vi lært?__
 * Litt om hva som skjer bak kulissene i React.
 
 <a name="database"/>
-## Database ##
+## Database 
 
 __Oppgave 3.1\: TextField__  
 Material-UI følger med et ganske fint tekstfelt som vi kan bruke. Komponenten heter TextField og har
