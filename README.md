@@ -105,6 +105,8 @@ __Oppgave 1 fullført! Hva har vi lært?__
 * Hvordan vi installerer nye biblioteker med npm. Merk at kommandoen "meteor npm install"
 kun fungerer med meteor.
 * Hvor lett det er å bygge appen.  
+
+Nå begynner moroa!
 <a name="react"/>
 ## Oppgave 2: React
 Endelig kan du begynne å kode! La oss starte med å lage den aller første siden man ser i appen.
@@ -331,6 +333,8 @@ __Oppgave 2 fullført! Hva har vi lært?__
 * Hvordan opprette komponenter i React
 * Hvordan React er en blanding av HTML og Javascript
 * Litt om hva som skjer bak kulissene i React.  
+
+Nå kommer det noe back-end!
 <a name="database"/>
 ## Oppgave 3: Database
 __Oppgave 3.1\: TextField__  
