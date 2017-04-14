@@ -461,10 +461,11 @@ klassedeklarasjon:
 export default class MessageBox extends TrackerReact(Component)
 ```
 
-Til dette må vi importere TrackerReact fra meteor/ultimatejs:tracker-react. Som en regel vi har satt for oss
-selv så må vi definere hva slags data vi vil ha fra databasen for å kunne få data i det hele tatt. Vi trenger
-roomNumber for dette så det kan vi få fra props. Vi sier til Meteor hvilke data vi vil ha ved å ha et kall på
-subscribe i en subscription attributt i state:
+Til dette må vi importere TrackerReact fra meteor/ultimatejs:tracker-react. Vi har nå laget en "smart"
+komponent som gjør mer enn å bare rendere det den har blitt fortalt om som en såkalt "dum" komponent gjør.
+Som en regel vi har satt for oss selv så må vi definere hva slags data vi vil ha fra databasen for å kunne 
+få data i det hele tatt. Vi trenger roomNumber for dette så det kan vi få fra props. Vi sier til Meteor 
+hvilke data vi vil ha ved å ha et kall på subscribe i en subscription attributt i state:
 ```
 this.state = {
     subscription: {
