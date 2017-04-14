@@ -59,22 +59,22 @@ Start appen ved å skrive kommandoen "meteor" og trykk enter, vent til Meteor er
 Åpne en nettleser og gå til addressen "localhost:3000"
 
 __Oppgave 1.4\: Installering av React__  
-Bruk kommandoen "meteor npm install --save react react-mounter react-dom react-tap-event-plugin" i terminal eller kommandolinje
-for å installere React-biblioteket  
+Nå skal vi installere React i prosjektet vårt. Åpne prosjektet i terminalen og kjøre følgende kommando:
+  meteor npm install --save react react-mounter react-dom react-tap-event-plugin
 
 __Oppgave 1.5\: Installering av Material-UI__  
 Material-UI er et GUI-bibliotek av Google som tar i bruk av Material Design. Material-UI er skreddersydd til
 React noe som gjør det mye lettere å bruke. Er du en Android bruker så er du sikkert allerede kjent med 
 GUI-elementene.
-Bruk kommandoen "meteor npm install --save material-ui" i terminal eller kommandolinje
-for å installere React-biblioteket  
+Bruk denne kommandoen i terminalen for å installere Material-UI biblioteket
+  meteor npm install --save material-ui
 
 __Oppgave 1.6\: Legg til FlowRouter og diverse__  
-React har en\t innebygd router verktøy, men vi skal ikke bruke denne fordi det blir mye uryddig kode av det.
+React har et innebygd router verktøy, men vi skal ikke bruke denne fordi det blir mye uryddig kode av det.
 FlowRouter er et verktøy for React som nettopp fikser dette og er mye lettere å lære.
 FlowRouter ligger i et bibliotek som heter Kadira som allerede finnes i Meteor.
-Legg til FlowRouter og andre viktige verktøy i prosjektet med kommandoen 
-"meteor add kadira:flow-router alanning:roles ultimatejs:tracker-react"
+Legg til FlowRouter og andre viktige verktøy i prosjektet med denne kommandoen: 
+  meteor add kadira:flow-router alanning:roles ultimatejs:tracker-react
 
 __Oppgave 1.7\: Last ned resterende dependencies__  
 Kjør kommandoen "meteor npm install" for å laste ned dependencies som du mangler eller trenger å oppdatere.
