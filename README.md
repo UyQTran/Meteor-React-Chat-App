@@ -2,7 +2,8 @@
 
 ## 0: Forord ##
 Dette kurset er ment til nybegynnere i React og Javascript, men helt grunnleggende
-HTML- og programmeringskunnskaper er forventet at du skal kunne. 
+HTML- og programmeringskunnskaper er forventet at du skal kunne. Med andre ord, om du
+tar INF1010 nå så er du mer enn kvalifisert til dette kurset!
 
 __Oppgave 0.1\: Editor__  
 Kjør opp din favoritteditor/IDE! Jeg anbefaler Webstorm, men Eclipse og Atom fungerer også
@@ -17,10 +18,10 @@ har en utvidelse som heter React Developer Tools hjelper nettleresen å forstå 
 som gjør det lettere for oss å analysere appen.
 
 __React__  
-React er et front-end rammeverk som håndterer logikk på brukergrensesnittet til appen vår. Her bruker vi
+React er et front-end bibliotek som håndterer logikk på brukergrensesnittet til appen vår. Her bruker vi
 konsepter som heter Components som er det som håndterer alt av rendering og visning av brukergrensesnittet.
 
-Mer dokumentasjon om React: https://facebook.github.io/react/docs/hello-world.html
+Mer dokumentasjon om React: https://facebook.github.io/react/docs/hello-world.html  
 React sin livssykel: https://facebook.github.io/react/docs/react-component.html
 
 __Meteor__  
@@ -33,10 +34,11 @@ og lett å bruke, tilnærmet ingen databasekunnskaper trengs for å begynne.
 Mer dokumentasjon om Meteor: http://docs.meteor.com/#/full/
 
 ## 1: Oppsett ##
-Til oppsett er oppgave 1.4 og 1.5 gjort i prekoden, gjør disse kun hvis du skal sette opp egne prosjekter.
+__OBS!__ Oppgave 1.4 og 1.5 er allerede gjort i prekoden, gjør disse kun hvis du skal sette opp egne prosjekter.
 
 __Oppgave 1.1\: Oppsett på egen maskin__  
-Last ned og installer Meteor: https://www.meteor.com/install
+Last ned og installer Meteor: https://www.meteor.com/install  
+Last ned og installer NodeJS: https://nodejs.org/en/
 
 __Oppgave 1.2\: Last ned prekoden__  
 Scroll helt øverst på denne siden og trykk på den grønne knappen "Clone or download" og trykk på "download ZIP"  
@@ -56,7 +58,7 @@ for å installere React-biblioteket
 __Oppgave 1.5\: Installering av Material-UI__  
 Material-UI er et GUI-bibliotek av Google som tar i bruk av Material Design. Material-UI er skreddersydd til
 React noe som gjør det mye lettere å bruke. Er du en Android bruker så er du sikkert allerede kjent med 
-GUI-elementene
+GUI-elementene.
 Bruk kommandoen "meteor npm install --save material-ui" i terminal eller kommandolinje
 for å installere React-biblioteket  
 
@@ -70,9 +72,9 @@ Legg til FlowRouter og andre viktige verktøy i prosjektet med kommandoen
 __Oppgave 1.7\: Last ned resterende dependencies__  
 Kjør kommandoen "meteor npm install" for å laste ned dependencies som du mangler eller trenger å oppdatere.
 
-__Oppgave 1.8\: Skjekk!__  
-Sjekk om alt er som det skal. Filen som heter "package.json" er en fil som beskriver
-hvilke biblioteker prosjektet er avhengig av. 
+__Oppgave 1.8\: Sjekk!__  
+Sjekk om alt er som det skal. Filen som heter "package.json" beskriver
+hvilke biblioteker prosjektet vårt er avhengig av. 
 
 ```
 {
@@ -464,7 +466,7 @@ this.state = {
 };
 ```
 
-For å faktisk hente denne dataen må vi han en funksjon som gjør en spørring på hva enn den kan få fra databasen.
+For å faktisk hente denne dataen må vi ha en funksjon som gjør en spørring på hva enn den kan få fra databasen.
 Legg til denne funksjonen slik:
 ```
 messages() {
