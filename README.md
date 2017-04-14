@@ -104,7 +104,7 @@ Hvis package-filen ser ut som bildet over kan du fortsette!
 __Oppgave 1 fullført! Hva har vi lært?__  
 * Hvordan vi installerer nye biblioteker med npm. Merk at kommandoen "meteor npm install"
 kun fungerer med meteor.
-* Hvor lett det er å bygge appen.
+* Hvor lett det er å bygge appen.  
 <a name="react"/>
 ## Oppgave 2: React
 __Oppgave 2.1\: Min chatteapp__  
@@ -330,7 +330,7 @@ __Oppgave 2 fullført! Hva har vi lært?__
 * Hvordan skrive logikk for knapper
 * Hvordan opprette komponenter i React
 * Hvordan React er en blanding av HTML og Javascript
-* Litt om hva som skjer bak kulissene i React.
+* Litt om hva som skjer bak kulissene i React.  
 <a name="database"/>
 ## Oppgave 3: Database
 __Oppgave 3.1\: TextField__  
