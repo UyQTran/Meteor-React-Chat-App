@@ -25,7 +25,7 @@ Mer dokumentasjon om React: https://facebook.github.io/react/docs/hello-world.ht
 React sin livssykel: https://facebook.github.io/react/docs/react-component.html
 
 __Meteor__  
-Meteor er et back-end rammeverk som håndterer det meste av server og klient kommunikasjon.
+Meteor er et rammeverk som håndterer det meste av server og klient kommunikasjon.
 Det gjør det lettere for oss som utviklere å kode fordi vi slipper å server-klient flyten fra scratch.
 Meteor bruker Javascript som programmeringsspråk som gjør at vi kun trenger å kunne ett programmeringsspråk
 til å lage appen vår. MongoDB er standard databaseverktøyet som blir brukt med Meteor som er kjapt å sette opp
