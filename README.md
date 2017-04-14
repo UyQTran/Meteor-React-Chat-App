@@ -107,7 +107,6 @@ kun fungerer med meteor.
 * Hvor lett det er å bygge appen.
 <a name="react"/>
 ## Oppgave 2: React
-
 __Oppgave 2.1\: Min chatteapp__  
 Endelig kan du begynne å kode! La oss starte med å lage den aller første siden man ser i appen.
 Vi kaller denne komponenten LandingPage, lag en fil med navn "LandingPage.jsx" i imports/client/components.
@@ -334,7 +333,6 @@ __Oppgave 2 fullført! Hva har vi lært?__
 * Litt om hva som skjer bak kulissene i React.
 <a name="database"/>
 ## Oppgave 3: Database
-
 __Oppgave 3.1\: TextField__  
 Material-UI følger med et ganske fint tekstfelt som vi kan bruke. Komponenten heter TextField og har
 en rekke properties vi skal bruke.
