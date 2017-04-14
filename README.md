@@ -164,7 +164,8 @@ this.state = {
 };
  ```
  
-I Javascript bruker vi ofte objekter som state. I koden over har state et attributt som heter
+Objektet state tar vare på verdier og fungerer som minnet til komponenten som kun den komponenten har tilgang til. 
+I koden over har state et attributt som heter
 "appName" som er satt til teksten "Ditt chat app navn her".
 
 Videre skal vi bruke state-objektet vårt til å få tak i appnavnet på følgene måte:
@@ -187,7 +188,7 @@ gjentas i evigheter.
 
 __Oppgave 2.2\: Routing__  
 For å kunne deklarere vår LandingPage som det aller første appen skal vise må vi lage en routing 
-for dette in FlowRouter. Alt av logikk i routing skal ligge i imports/startup/client/routes.jsx.
+for dette i FlowRouter. Alt av logikk i routing skal ligge i imports/startup/client/routes.jsx.
 
 I routes.jsx importer vår LandingPage slik:
 ```
