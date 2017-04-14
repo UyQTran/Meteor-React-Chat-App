@@ -464,7 +464,7 @@ this.state = {
 };
 ```
 
-For å faktisk hente denne dataen må vi han en funksjon som gjør en spørring på hva enn den kan få fra databasen.
+For å faktisk hente denne dataen må vi ha en funksjon som gjør en spørring på hva enn den kan få fra databasen.
 Legg til denne funksjonen slik:
 ```
 messages() {
