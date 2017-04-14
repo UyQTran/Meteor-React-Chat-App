@@ -1,6 +1,14 @@
 # Applitude - Chat App med ReactJS og Meteor
 
-## 0: Forord ##
+##### Innhold  
+[Forord](#forord) 
+[Oppsett](#oppsett) 
+[React](#react) 
+[Database](#database) 
+
+<a name="forord"/>
+## Forord ##
+
 Dette kurset er ment til nybegynnere i React og Javascript, men helt grunnleggende
 HTML- og programmeringskunnskaper er forventet at du skal kunne. Med andre ord, om du
 tar INF1010 nå så er du mer enn kvalifisert til dette kurset!
@@ -33,7 +41,8 @@ og lett å bruke, tilnærmet ingen databasekunnskaper trengs for å begynne.
 
 Mer dokumentasjon om Meteor: http://docs.meteor.com/#/full/
 
-## 1: Oppsett ##
+<a name="oppsett"/>
+## Oppsett ##
 __OBS!__ Oppgave 1.4 og 1.5 er allerede gjort i prekoden, gjør disse kun hvis du skal sette opp egne prosjekter.
 
 __Oppgave 1.1\: Oppsett på egen maskin__  
@@ -101,8 +110,8 @@ __Oppgave 1 fullført! Hva har vi lært?__
 kun fungerer med meteor.
 * Hvor lett det er å bygge appen.
 
-
-## 2: React ##
+<a name="react"/>
+## React ##
 
 __Oppgave 2.1\: Min chatteapp__  
 Endelig kan du begynne å kode! La oss starte med å lage den aller første siden man ser i appen.
@@ -329,8 +338,8 @@ __Oppgave 2 fullført! Hva har vi lært?__
 * Hvordan React er en blanding av HTML og Javascript
 * Litt om hva som skjer bak kulissene i React.
 
-
-## 3: Database ##
+<a name="database"/>
+## Database ##
 
 __Oppgave 3.1\: TextField__  
 Material-UI følger med et ganske fint tekstfelt som vi kan bruke. Komponenten heter TextField og har
