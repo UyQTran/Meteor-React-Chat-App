@@ -106,9 +106,9 @@ __Oppgave 1 fullført! Hva har vi lært?__
 kun fungerer med meteor.
 * Hvor lett det er å bygge appen.
 <a name="react"/>
-## Oppgave 2: React  
-__Oppgave 2.1\: Min chatteapp__  
+## Oppgave 2: React
 Endelig kan du begynne å kode! La oss starte med å lage den aller første siden man ser i appen.
+__Oppgave 2.1\: Min chatteapp__  
 Vi kaller denne komponenten LandingPage, lag en fil med navn "LandingPage.jsx" i imports/client/components.
 
  ```
