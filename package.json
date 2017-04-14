@@ -5,6 +5,11 @@
     "start": "meteor run"
   },
   "dependencies": {
-    "meteor-node-stubs": "~0.2.0"
+    "material-ui": "^0.17.3",
+    "meteor-node-stubs": "~0.2.0",
+    "react": "^15.5.4",
+    "react-dom": "^15.5.4",
+    "react-mounter": "^1.2.0",
+    "react-tap-event-plugin": "^2.0.1"
   }
 }
