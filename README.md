@@ -6,7 +6,7 @@
 [Oppgave 3: Database](#database)  
 <a name="forord"/>
 ## Oppgave 0: Forord
-Dette kurset er ment til nybegynnere i React og Javascript, men helt grunnleggende
+Dette kurset er ment for nybegynnere i React og Javascript, men helt grunnleggende
 HTML- og programmeringskunnskaper er forventet at du skal kunne. Med andre ord, om du
 tar INF1010 nå så er du mer enn kvalifisert til dette kurset!
 
