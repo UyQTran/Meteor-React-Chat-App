@@ -2,7 +2,8 @@
 
 ## 0: Forord ##
 Dette kurset er ment til nybegynnere i React og Javascript, men helt grunnleggende
-HTML- og programmeringskunnskaper er forventet at du skal kunne. 
+HTML- og programmeringskunnskaper er forventet at du skal kunne. Med andre ord, om du
+tar INF1010 nå så er du mer enn kvalifisert til dette kurset!
 
 __Oppgave 0.1\: Editor__  
 Kjør opp din favoritteditor/IDE! Jeg anbefaler Webstorm, men Eclipse og Atom fungerer også
