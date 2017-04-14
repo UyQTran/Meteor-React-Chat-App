@@ -108,9 +108,9 @@ kun fungerer med meteor.
 
 Nå begynner moroa!
 <a name="react"/>
-## Oppgave 2: React
-Endelig kan du begynne å kode! La oss starte med å lage den aller første siden man ser i appen.
+## Oppgave 2: React 
 __Oppgave 2.1\: Min chatteapp__  
+Endelig kan du begynne å kode! La oss starte med å lage den aller første siden man ser i appen.  
 Vi kaller denne komponenten LandingPage, lag en fil med navn "LandingPage.jsx" i imports/client/components.
 
  ```
