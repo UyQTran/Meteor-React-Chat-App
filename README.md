@@ -99,7 +99,7 @@ hvilke biblioteker prosjektet vårt er avhengig av.
 }
 ```
 
-Hvis package-filen ser ut som bildet over kan du fortsette!
+Hvis package-filen ser ut som koden over kan du fortsette!
 
 __Oppgave 1 fullført! Hva har vi lært?__  
 * Hvordan vi installerer nye biblioteker med npm. Merk at kommandoen "meteor npm install"
