@@ -70,7 +70,7 @@ Legg til FlowRouter og andre viktige verktøy i prosjektet med kommandoen
 __Oppgave 1.7\: Last ned resterende dependencies__  
 Kjør kommandoen "meteor npm install" for å laste ned dependencies som du mangler eller trenger å oppdatere.
 
-__Oppgave 1.8\: Skjekk!__  
+__Oppgave 1.8\: Sjekk!__  
 Sjekk om alt er som det skal. Filen som heter "package.json" er en fil som beskriver
 hvilke biblioteker prosjektet er avhengig av. 
 
