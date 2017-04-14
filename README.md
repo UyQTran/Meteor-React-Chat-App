@@ -187,6 +187,10 @@ på denne modusen til HTML ved å skrive HTML igjen inne i krøllparantesen og d
 gjentas i evigheter.
 
 __Oppgave 2.2\: Routing__  
+Fordi React er et fron-end bibliotek for å lage single page apps så trenger vi et verktøy som kan 
+skille mellom forskjellige sider i appen vår og samt ha forskjellige lenker til hver side. Hver 
+side bruker også helt forskjellige komponenter så verktøyet må også oppføre seg som en "sjef" over
+alle komponentene. Til dette bruker vi da FlowRouter som er et verktøy i Meteor.
 For å kunne deklarere vår LandingPage som det aller første appen skal vise må vi lage en routing 
 for dette i FlowRouter. Alt av logikk i routing skal ligge i imports/startup/client/routes.jsx.
 
