@@ -33,6 +33,7 @@ og lett å bruke, tilnærmet ingen databasekunnskaper trengs for å begynne.
 Mer dokumentasjon om Meteor: http://docs.meteor.com/#/full/
 
 ## 1: Oppsett ##
+Til oppsett er oppgave 1.4 og 1.5 gjort i prekoden, gjør disse kun hvis du skal sette opp egne prosjekter.
 
 __Oppgave 1.1\: Oppsett på egen maskin__  
 Last ned og installer Meteor: https://www.meteor.com/install
@@ -66,8 +67,10 @@ FlowRouter ligger i et bibliotek som heter Kadira som allerede finnes i Meteor.
 Legg til FlowRouter og andre viktige verktøy i prosjektet med kommandoen 
 "meteor add kadira:flow-router alanning:roles ultimatejs:tracker-react"
 
+__Oppgave 1.7\: Last ned resterende dependencies__  
+Kjør kommandoen "meteor npm install" for å laste ned dependencies som du mangler eller trenger å oppdatere.
 
-__Oppgave 1.7\: Skjekk!__  
+__Oppgave 1.8\: Skjekk!__  
 Sjekk om alt er som det skal. Filen som heter "package.json" er en fil som beskriver
 hvilke biblioteker prosjektet er avhengig av. 
 
