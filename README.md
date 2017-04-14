@@ -1,7 +1,12 @@
 # Applitude - Chat App med ReactJS og Meteor
-
-## 0: Forord ##
-Dette kurset er ment til nybegynnere i React og Javascript, men helt grunnleggende
+#### Innhold  
+[Oppgave 0: Forord](#forord)  
+[Oppgave 1: Oppsett](#oppsett)  
+[Oppgave 2: React](#react)  
+[Oppgave 3: Database](#database)  
+<a name="forord"/>
+## Oppgave 0: Forord
+Dette kurset er ment for nybegynnere i React og Javascript, men helt grunnleggende
 HTML- og programmeringskunnskaper er forventet at du skal kunne. Med andre ord, om du
 tar INF1010 nå så er du mer enn kvalifisert til dette kurset!
 
@@ -17,6 +22,8 @@ I dette kurset anbefaler jeg å bruke Google Chrome som nettleser for å teste a
 har en utvidelse som heter React Developer Tools hjelper nettleresen å forstå hvordan appen vår fungerer
 som gjør det lettere for oss å analysere appen.
 
+Google Chrome: https://www.google.com/chrome/browser/desktop/index.html
+
 __React__  
 React er et front-end bibliotek som håndterer logikk på brukergrensesnittet til appen vår. Her bruker vi
 konsepter som heter Components som er det som håndterer alt av rendering og visning av brukergrensesnittet.
@@ -25,15 +32,15 @@ Mer dokumentasjon om React: https://facebook.github.io/react/docs/hello-world.ht
 React sin livssykel: https://facebook.github.io/react/docs/react-component.html
 
 __Meteor__  
-Meteor er et rammeverk som håndterer det meste av server og klient kommunikasjon.
+Meteor er et back-end rammeverk som håndterer det meste av server og klient kommunikasjon.
 Det gjør det lettere for oss som utviklere å kode fordi vi slipper å server-klient flyten fra scratch.
 Meteor bruker Javascript som programmeringsspråk som gjør at vi kun trenger å kunne ett programmeringsspråk
 til å lage appen vår. MongoDB er standard databaseverktøyet som blir brukt med Meteor som er kjapt å sette opp
 og lett å bruke, tilnærmet ingen databasekunnskaper trengs for å begynne.
 
 Mer dokumentasjon om Meteor: http://docs.meteor.com/#/full/
-
-## 1: Oppsett ##
+<a name="oppsett"/>
+## Oppgave 1: Oppsett
 __OBS!__ Oppgave 1.4 og 1.5 er allerede gjort i prekoden, gjør disse kun hvis du skal sette opp egne prosjekter.
 
 __Oppgave 1.1\: Oppsett på egen maskin__  
@@ -94,16 +101,16 @@ hvilke biblioteker prosjektet vårt er avhengig av.
 }
 ```
 
-Hvis package-filen ser ut som bildet over kan du fortsette!
+Hvis package-filen ser ut som koden over kan du fortsette!
 
 __Oppgave 1 fullført! Hva har vi lært?__  
 * Hvordan vi installerer nye biblioteker med npm. Merk at kommandoen "meteor npm install"
 kun fungerer med meteor.
-* Hvor lett det er å bygge appen.
+* Hvor lett det er å bygge appen.  
 
-
-## 2: React ##
-
+Nå begynner moroa!
+<a name="react"/>
+## Oppgave 2: React 
 __Oppgave 2.1\: Min chatteapp__  
 Endelig kan du begynne å kode! La oss starte med å lage den aller første siden man ser i appen.
 Vi kaller denne komponenten LandingPage, lag en fil med navn "LandingPage.jsx" i imports/client/components.
@@ -327,11 +334,11 @@ __Oppgave 2 fullført! Hva har vi lært?__
 * Hvordan skrive logikk for knapper
 * Hvordan opprette komponenter i React
 * Hvordan React er en blanding av HTML og Javascript
-* Litt om hva som skjer bak kulissene i React.
+* Litt om hva som skjer bak kulissene i React.  
 
-
-## 3: Database ##
-
+Nå kommer det noe back-end!
+<a name="database"/>
+## Oppgave 3: Database
 __Oppgave 3.1\: TextField__  
 Material-UI følger med et ganske fint tekstfelt som vi kan bruke. Komponenten heter TextField og har
 en rekke properties vi skal bruke.
@@ -454,10 +461,11 @@ klassedeklarasjon:
 export default class MessageBox extends TrackerReact(Component)
 ```
 
-Til dette må vi importere TrackerReact fra meteor/ultimatejs:tracker-react. Som en regel vi har satt for oss
-selv så må vi definere hva slags data vi vil ha fra databasen for å kunne få data i det hele tatt. Vi trenger
-roomNumber for dette så det kan vi få fra props. Vi sier til Meteor hvilke data vi vil ha ved å ha et kall på
-subscribe i en subscription attributt i state:
+Til dette må vi importere TrackerReact fra meteor/ultimatejs:tracker-react. Vi har nå laget en "smart"
+komponent som gjør mer enn å bare rendere det den har blitt fortalt om som en såkalt "dum" komponent gjør.
+Som en regel vi har satt for oss selv så må vi definere hva slags data vi vil ha fra databasen for å kunne 
+få data i det hele tatt. Vi trenger roomNumber for dette så det kan vi få fra props. Vi sier til Meteor 
+hvilke data vi vil ha ved å ha et kall på subscribe i en subscription attributt i state:
 ```
 this.state = {
     subscription: {
@@ -506,4 +514,8 @@ Siden kan se slik ut:
 __Videre__  
 Dette er bare begynnelsen, skjellettet på appen. Det er mye mer man kan gjøre som er mye morsommere. Alt fra
 farger, animasjoner, brukere, mer fonksjonalitet og mer robusthet kan blir lagt til i appen. Bli med i neste kurs 
-når vi går enda mer i dybden på Meteor og React!
+når vi går enda mer i dybden på Meteor og React! 
+
+Det ligger et løsningsforslag i en annen branch. Var det noe du ikke helt skjønte eller om du bare vil se
+en annen løsning så kan du laste ned den her: https://github.com/UyQTran/Chat-App/tree/losningsforslag
+
