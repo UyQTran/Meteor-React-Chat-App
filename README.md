@@ -257,7 +257,7 @@ heter PinGeneratorService. Importer denne slik:
 import PinGeneratorService from '../services/PinGeneratorService.jsx';
 ```
 
-Importer FlowRouter som du har gjort i routes.js. Nå kan vi lage en lambda-funksjon som
+Importer FlowRouter som du har gjort i routes.jsx. Nå kan vi lage en lambda-funksjon som
 sender oss til en ny side slik:
 ```
 render() {
@@ -328,8 +328,8 @@ Vi vil ha selve chattefunksjonaliteten i en helt egen side så lag en fil med na
 i imports/client/components. Fyll filen med klasse-, konstruktør-, state-, og render-deklarasjoner
 akkurat som du har gjort i LandingPage.jsx. Husk også å importere React!
 
-Nå gjenstår det å lage en route til denne siden i routes.js. Importer ChatPage og legg til følgende 
-kode i routes.js:
+Nå gjenstår det å lage en route til denne siden i routes.jsx. Importer ChatPage og legg til følgende 
+kode i routes.jsx:
 ```
 FlowRouter.route('/chat-room/:pin', {
     name: 'chat-room',
