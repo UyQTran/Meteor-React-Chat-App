@@ -293,8 +293,8 @@ på routen som knappen skal føre til og tar imot eventuelle parametere i et obj
 
 __Vent litt!__ Du har skrevet ineffektiv kode! Alle referanser av lambda-funksjoner i Javascript har sin
 helt egne unike id. Dette gjør at React tror at vi sender inn forskjellige funksjoner hver gang LandingPage
-blir endret litt på. Med andre ord, FlatButton for Create blir renderet unødvendig flere ganger enn det den
-trenger.
+blir endret litt på. React renderer komponenter på nytt hvis den ser at komponenten har endret seg.
+Med andre ord, FlatButton for Create blir renderet unødvendig flere ganger enn det den trenger.
 
 Vi fikser dette ved å flytte funksjonen vår ut av render. Istedet for å lage en lambda funksjon så kan vi
 heller lage en vanlig funksjon og sende den referanser inn i onTouchTap:
