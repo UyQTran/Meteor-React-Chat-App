@@ -196,7 +196,7 @@ for dette i FlowRouter. Alt av logikk i routing skal ligge i imports/startup/cli
 
 I routes.jsx importer vår LandingPage slik:
 ```
-import LandingPage from '../ui/LandingPage.jsx';
+import LandingPage from '/imports/client/components/LandingPage.jsx';
 ```
 
 og legg til følgende kode:
@@ -215,7 +215,7 @@ Forklaring:
 FlowRouter er en modul som husker alt av routing mellom sider i appen vår. Om du vil legge 
 til en side i appen må du sende med logikk til FlowRouter før den kan bli aksessert. 
 
-FlowRouter har en funksjon, route, som tar imot to paramtere. 
+FlowRouter har en funksjon, route, som tar imot to paramtere. Disse skal bli brukt i senere routing
 * Det første parameteren er hva som skal stå i lenken etter domenenavnet, for eksempel
 hello.com/parameter-tekst-her.
 * Det andre er et objekt som inneholder to attributter, name og en lamba-funksjon. Atributtet 
