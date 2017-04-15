@@ -242,7 +242,7 @@ meteor kjørende. Du skal nå se innholdet i komponenten LandingPage.
 
 __Oppgave 2.3\: Knapper__  
 Akkurat som HTML så er det veldig lett å legge til knapper. Importer FlatButton fra 
-"material-ui/FlatButton" akkurat som du har gjort tidligere.
+"material-ui/FlatButton" akkurat som du har gjort tidligere med andre komponenter.
 
 Legg til to FlatButton-komponenter rett under h1-elementet i LandingPage. FlatButton har
 en property som heter "label". Denne propertien tar imot en tekststreng som bestemmer hva som
