@@ -8,7 +8,13 @@
 ## Oppgave 0: Forord
 Dette kurset er ment for nybegynnere i React og Javascript, men helt grunnleggende
 HTML- og programmeringskunnskaper er forventet at du skal kunne. Med andre ord, om du
-tar INF1010 nå så er du mer enn kvalifisert til dette kurset!
+tar INF1010 nå så er du mer enn kvalifisert til dette kurset! 
+
+I oppgavene har jeg med vilje vært vanskelig noen steder for å få deg til å tenke om hva du
+gjør når du koder. Det blir veldig mye copy-paste på begynnelser, men etterhvert som du
+fortsetter på oppgavene, antar jeg at du skjønner hva du copy-paster og klarer å gjøre det
+skrive det samme i andre kontekster. Spør meg på e-post hvis du ser ting som ikke stemmer
+eller lurer på noe: uqtontran@gmail.com
 
 __Oppgave 0.1\: Editor__  
 Kjør opp din favoritteditor/IDE! Jeg anbefaler Webstorm, men Eclipse og Atom fungerer også
