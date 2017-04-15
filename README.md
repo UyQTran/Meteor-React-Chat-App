@@ -286,7 +286,7 @@ render() {
 ```
 
 Forklaring:  
-Lambda-funksjoner i Javascript har formen (<par1>,<parX>)=>{<kode>}. Disse funksjonene er navnløse
+Lambda-funksjoner i Javascript har formen (\<par1\>,\<parX\>)=>{\<kode\>}. Disse funksjonene er navnløse
 og selve koden er bare referansen til funksjonen. Altså den funksjonen som blir ikke kalt på med en
 gang fordi vi kune sender referansen inn til FlatButton. FlowRouter sin go-funksjon tar imot navnet
 på routen knappen skal føre til og tar imot eventuelle parametere i et objekt.
