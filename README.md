@@ -8,7 +8,13 @@
 ## Oppgave 0: Forord
 Dette kurset er ment for nybegynnere i React og Javascript, men helt grunnleggende
 HTML- og programmeringskunnskaper er forventet at du skal kunne. Med andre ord, om du
-tar INF1010 nå så er du mer enn kvalifisert til dette kurset!
+tar INF1010 nå så er du mer enn kvalifisert til dette kurset! 
+
+I oppgavene har jeg med vilje vært vanskelig noen steder for å få deg til å tenke om hva du
+gjør når du koder. Det blir veldig mye copy-paste på begynnelsen, men etterhvert som du
+fortsetter på oppgavene, antar jeg at du skjønner hva du copy-paster og klarer å gjøre det
+skrive det samme i andre kontekster. Spør meg på e-post hvis du ser ting som ikke stemmer
+eller lurer på noe: uqtontran@gmail.com
 
 __Oppgave 0.1\: Editor__  
 Kjør opp din favoritteditor/IDE! Jeg anbefaler Webstorm, men Eclipse og Atom fungerer også
@@ -56,25 +62,32 @@ Pull direkte fra repositorien med linken: https://github.com/UyQTran/Chat-App.gi
 __Oppgave 1.3\: Prøvekjør appen__  
 Åpne mappen du lastet ned i din favoritt-terminal eller kommandolinje  
 Start appen ved å skrive kommandoen "meteor" og trykk enter, vent til Meteor er ferdig med å bygge appen  
-Åpne en nettleser og gå til addressen "localhost:3000"
+Åpne en nettleser og gå til addressen "localhost:3000". Du kommer til å se noen warnings i terminalen,
+ignorer disse for nå, vi skal fikse dem senere.
 
 __Oppgave 1.4\: Installering av React__  
-Bruk kommandoen "meteor npm install --save react react-mounter react-dom react-tap-event-plugin" i terminal eller kommandolinje
-for å installere React-biblioteket  
+Nå skal vi installere React i prosjektet vårt. Åpne prosjektet i terminalen og kjøre følgende kommando:
+```
+meteor npm install --save react react-mounter react-dom react-tap-event-plugin
+```
 
 __Oppgave 1.5\: Installering av Material-UI__  
 Material-UI er et GUI-bibliotek av Google som tar i bruk av Material Design. Material-UI er skreddersydd til
 React noe som gjør det mye lettere å bruke. Er du en Android bruker så er du sikkert allerede kjent med 
 GUI-elementene.
-Bruk kommandoen "meteor npm install --save material-ui" i terminal eller kommandolinje
-for å installere React-biblioteket  
+Bruk denne kommandoen i terminalen for å installere Material-UI biblioteket:
+```
+meteor npm install --save material-ui
+```
 
 __Oppgave 1.6\: Legg til FlowRouter og diverse__  
-React har en\t innebygd router verktøy, men vi skal ikke bruke denne fordi det blir mye uryddig kode av det.
+React har et innebygd router verktøy, men vi skal ikke bruke denne fordi det blir mye uryddig kode av det.
 FlowRouter er et verktøy for React som nettopp fikser dette og er mye lettere å lære.
 FlowRouter ligger i et bibliotek som heter Kadira som allerede finnes i Meteor.
-Legg til FlowRouter og andre viktige verktøy i prosjektet med kommandoen 
-"meteor add kadira:flow-router alanning:roles ultimatejs:tracker-react"
+Legg til FlowRouter og andre viktige verktøy i prosjektet med denne kommandoen: 
+```
+meteor add kadira:flow-router alanning:roles ultimatejs:tracker-react
+```
 
 __Oppgave 1.7\: Last ned resterende dependencies__  
 Kjør kommandoen "meteor npm install" for å laste ned dependencies som du mangler eller trenger å oppdatere.
@@ -158,7 +171,7 @@ this.state = {
 };
  ```
  
-Objektet state brukes av komponenten som minne for kun den gjeldende komponenten. 
+Objektet state tar vare på verdier og fungerer som minnet til komponenten som kun den komponenten har tilgang til. 
 I koden over har state et attributt som heter
 "appName" som er satt til teksten "Ditt chat app navn her".
 
@@ -181,12 +194,16 @@ på denne modusen til HTML ved å skrive HTML igjen inne i krøllparantesen og d
 gjentas i evigheter.
 
 __Oppgave 2.2\: Routing__  
-For å kunne deklarere vår LandingPage som den aller første appen skal vise må vi lage en routing 
-for dette in FlowRouter. Alt av logikk i routing skal ligge i imports/startup/client/routes.jsx.
+Fordi React er et front-end bibliotek for å lage single page apps så trenger vi et verktøy som kan 
+skille mellom forskjellige sider i appen vår og samt ha forskjellige lenker til hver side. Hver 
+side bruker også helt forskjellige komponenter så verktøyet må også oppføre seg som en "sjef" over
+alle komponentene. Til dette bruker vi da FlowRouter som er et verktøy i Meteor.  
+For å kunne deklarere vår LandingPage som det aller første appen skal vise må vi lage en routing 
+for dette i FlowRouter. Alt av logikk i routing skal ligge i imports/startup/client/routes.jsx.
 
 I routes.jsx importer vår LandingPage slik:
 ```
-import LandingPage from '../ui/LandingPage.jsx';
+import LandingPage from '/imports/client/components/LandingPage.jsx';
 ```
 
 og legg til følgende kode:
@@ -205,7 +222,7 @@ Forklaring:
 FlowRouter er en modul som husker alt av routing mellom sider i appen vår. Om du vil legge 
 til en side i appen må du sende med logikk til FlowRouter før den kan bli aksessert. 
 
-FlowRouter har en funksjon, route, som tar imot to paramtere. 
+FlowRouter har en funksjon, route, som tar imot to paramtere. Disse skal bli brukt i senere routing
 * Det første parameteren er hva som skal stå i lenken etter domenenavnet, for eksempel
 hello.com/parameter-tekst-her.
 * Det andre er et objekt som inneholder to attributter, name og en lamba-funksjon. Atributtet 
@@ -225,7 +242,7 @@ meteor kjørende. Du skal nå se innholdet i komponenten LandingPage.
 
 __Oppgave 2.3\: Knapper__  
 Akkurat som HTML så er det veldig lett å legge til knapper. Importer FlatButton fra 
-"material-ui/FlatButton" akkurat som du har gjort tidligere.
+"material-ui/FlatButton" akkurat som du har gjort tidligere med andre komponenter.
 
 Legg til to FlatButton-komponenter rett under h1-elementet i LandingPage. FlatButton har
 en property som heter "label". Denne propertien tar imot en tekststreng som bestemmer hva som
@@ -247,7 +264,7 @@ heter PinGeneratorService. Importer denne slik:
 import PinGeneratorService from '../services/PinGeneratorService.jsx';
 ```
 
-Importer FlowRouter som du har gjort i routes.js. Nå kan vi lage en lambda-funksjon som
+Importer FlowRouter som du har gjort i routes.jsx. Nå kan vi lage en lambda-funksjon som
 sender oss til en ny side slik:
 ```
 render() {
@@ -318,8 +335,8 @@ Vi vil ha selve chattefunksjonaliteten i en helt egen side så lag en fil med na
 i imports/client/components. Fyll filen med klasse-, konstruktør-, state-, og render-deklarasjoner
 akkurat som du har gjort i LandingPage.jsx. Husk også å importere React!
 
-Nå gjenstår det å lage en route til denne siden i routes.js. Importer ChatPage og legg til følgende 
-kode i routes.js:
+Nå gjenstår det å lage en route til denne siden i routes.jsx. Importer ChatPage og legg til følgende 
+kode i routes.jsx:
 ```
 FlowRouter.route('/chat-room/:pin', {
     name: 'chat-room',
