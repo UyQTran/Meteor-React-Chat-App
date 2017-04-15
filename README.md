@@ -306,8 +306,9 @@ handleCreateButton() {
 }
 ```
 
-For å gjøre denne funksjonen "bærbar" så må vi knytte LandingPage til funksjonen. Dette gjør vi i 
-konstruktøren slik:
+For å gjøre denne funksjonen "bærbar" så må vi knytte LandingPage til funksjonen slik at vi bevarer
+scopet (aksess til samme variabler uavhengig hvor funksjonen blir kalt fra) til funksjonen. 
+Dette gjør vi i konstruktøren slik:
 ```
 this.handleCreateButton = this.handleCreateButton.bind(this);
 ```
