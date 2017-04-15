@@ -56,7 +56,8 @@ Pull direkte fra repositorien med linken: https://github.com/UyQTran/Chat-App.gi
 __Oppgave 1.3\: Prøvekjør appen__  
 Åpne mappen du lastet ned i din favoritt-terminal eller kommandolinje  
 Start appen ved å skrive kommandoen "meteor" og trykk enter, vent til Meteor er ferdig med å bygge appen  
-Åpne en nettleser og gå til addressen "localhost:3000"
+Åpne en nettleser og gå til addressen "localhost:3000". Du kommer til å se noen warnings i terminalen,
+ignorer disse for nå, vi skal fikse dem senere.
 
 __Oppgave 1.4\: Installering av React__  
 Nå skal vi installere React i prosjektet vårt. Åpne prosjektet i terminalen og kjøre følgende kommando:
