@@ -161,7 +161,8 @@ at vi må eksportere klassen i tillegg for at andre komponenter kan importere kl
 Component fra React gjør klassen om til en React komponent!
 Alle komponenter i React har en funksjon med navn "render" og en konstruktør som tar imot "props" eller properties
 som i HTML properties. 
-Funksjonen render returnerer HTML kode som skal bli tegnet på nettleseren.
+Funksjonen render returnerer HTML kode som skal bli tegnet på nettleseren. Render kan kun returnere et HTML-element
+noe betyr om vi skal rendere flere HTML-elementer så må vi wrappe de i et div-element
 
 __Vent litt!__ Du har gjort noe som ikke er god React kodeskikk!  
 Det er ikke god kodeskikk i React å hardkode tekst i HTML kode, dette er kanskje greit når du koder
