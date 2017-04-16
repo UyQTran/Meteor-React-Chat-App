@@ -67,7 +67,8 @@ ignorer disse for nå, vi skal fikse dem senere.
 
 __Oppgave 1.4\: Installering av React__  
 Nå skal vi installere React i prosjektet vårt. Åpne prosjektet i terminalen og kjøre følgende kommando:
-```
+
+```javascript
 meteor npm install --save react react-mounter react-dom react-tap-event-plugin
 ```
 
@@ -76,7 +77,8 @@ Material-UI er et GUI-bibliotek av Google som tar i bruk av Material Design. Mat
 React noe som gjør det mye lettere å bruke. Er du en Android bruker så er du sikkert allerede kjent med 
 GUI-elementene.
 Bruk denne kommandoen i terminalen for å installere Material-UI biblioteket:
-```
+
+```javascript
 meteor npm install --save material-ui
 ```
 
@@ -85,7 +87,8 @@ React har et innebygd router verktøy, men vi skal ikke bruke denne fordi det bl
 FlowRouter er et verktøy for React som nettopp fikser dette og er mye lettere å lære.
 FlowRouter ligger i et bibliotek som heter Kadira som allerede finnes i Meteor.
 Legg til FlowRouter og andre viktige verktøy i prosjektet med denne kommandoen: 
-```
+
+```javascript
 meteor add kadira:flow-router alanning:roles ultimatejs:tracker-react
 ```
 
