@@ -68,7 +68,7 @@ ignorer disse for nå, vi skal fikse dem senere.
 __Oppgave 1.4\: Installering av React__  
 Nå skal vi installere React i prosjektet vårt. Åpne prosjektet i terminalen og kjøre følgende kommando:
 
-```javascript
+```
 meteor npm install --save react react-mounter react-dom react-tap-event-plugin
 ```
 
@@ -78,7 +78,7 @@ React noe som gjør det mye lettere å bruke. Er du en Android bruker så er du 
 GUI-elementene.
 Bruk denne kommandoen i terminalen for å installere Material-UI biblioteket:
 
-```javascript
+```
 meteor npm install --save material-ui
 ```
 
@@ -88,7 +88,7 @@ FlowRouter er et verktøy for React som nettopp fikser dette og er mye lettere �
 FlowRouter ligger i et bibliotek som heter Kadira som allerede finnes i Meteor.
 Legg til FlowRouter og andre viktige verktøy i prosjektet med denne kommandoen: 
 
-```javascript
+```
 meteor add kadira:flow-router alanning:roles ultimatejs:tracker-react
 ```
 
@@ -384,11 +384,12 @@ onChange i den forstand, men den sender inn en viktig parameter, keyCode, som er
 det brukeren tastet på tastaturet.
 * value tar imot en tekststreng og er det som er skrevet i tekstfeltet.
 
-Importer komponenten TextField i ChatPage og fyll inn valgfri tekst i hintText og sett fullWidth til true.
-Husk at true og false er verdier i Javascript, men ikke i HTML.
+Importer komponenten TextField i ChatPage og fyll inn properties med følgende verdier:
+* hintText til en valgfri tekst
+* fullWidth til true (husk at true og false er verdier i Javascript, men ikke i HTML.)
 
 For å ta vare på verdien i tekstfeltet så må vi ha et attributt i state. Kall denne for textFieldValue og sett den
-til å være tom. Du kan deretter sette propertyen value i TextField til å bli lik this.state.textFieldValue.
+til å være tom.
 
 Legg til følgende funksjon i ChatPage:
 
@@ -397,6 +398,10 @@ handleTextFieldChange(event, newValue) {
     this.setState({textFieldValue:newValue});
 }
 ```
+
+Sett så følgende properties i TextField:
+* value til state-variablen textFieldValue
+* onChange til en referanse av funksjonen handleTextFieldChange
 
 __Forklaring:__  
 Attributtet state kan ikke bli endret direkte uten videre så derfor må vi bruke et asynkront kall (et kall
@@ -490,7 +495,7 @@ tar imot navnet på Meteor metoden vi lagde tidligere i publications.js og param
 og setter tekstfeltet til å være tomt igjen.
 
 Husk å gjøre disse "bærbare" ved å knytte scopet til ChatPage til begge funksjonene i konstruktøren. Så kan du
-sende handleKeyDown til propertyen onKeyDown.
+sette property onKetDown til funksjonen handleKeyDown.
 
 __Oppgave 3.3\: Data fetching__  
 Nå har du klart å sette data inn i databasen, men det er ikke nyttig hvis man ikke kan se det på appen.
@@ -503,8 +508,8 @@ klassedeklarasjon:
 export default class MessageBox extends TrackerReact(Component)
 ```
 
-Til dette må vi importere TrackerReact fra meteor/ultimatejs:tracker-react. Vi har nå laget en "smart"
-komponent som gjør mer enn å bare rendere det den har blitt fortalt om som en såkalt "dum" komponent gjør.
+Til dette må vi importere TrackerReact fra meteor/ultimatejs:tracker-react. Vi har nå deklarert en "smart"
+komponent som skal gjøre mer enn å bare rendere det den har blitt fortalt om som en såkalt "dum" komponent gjør.
 Som en regel vi har satt for oss selv så må vi definere hva slags data vi vil ha fra databasen for å kunne 
 få data i det hele tatt. Vi trenger roomNumber for dette så det kan vi få fra props. Vi sier til Meteor 
 hvilke data vi vil ha ved å ha et kall på subscribe i en subscription attributt i state:
@@ -545,6 +550,16 @@ render() {
     );
 }
 ```
+Forklaring:  
+Ved å kalle på this.messages få vi en liste av alle melinder som er sendt som ChatPage får lov til å hente
+fra databasen. Deretter bruker vi funksjonen map til å iterere gjennom listen med en lambda har skreddersydd
+til listen. Lambdaen returnerer et p-element med meldingsteksten som innhold. React krever at alle elementer
+som funksjoner som map returnerer har en unik key property. Derfor velger vi å bruke index som key fordi
+vi vet at denne alltid er unik for hvert p-element.
+
+Tilbake til ChatPage.jsx så må vi importere komponenten MessageBox. Legg til et MessageBox element over
+TextField elementet i ChatPage sin render-funksjon. Husk at MessageBox har en required property roomNumber,
+denne får du tak i fra ChatPage sin props.
 
 __Oppgave 3 fullført! Hva har vi lært?__  
 * Hvordan håndtere logikk for tekstfelter
