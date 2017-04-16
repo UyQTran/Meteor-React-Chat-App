@@ -167,7 +167,7 @@ __Vent litt!__ Du har gjort noe som ikke er god React kodeskikk!
 Det er ikke god kodeskikk i React å hardkode tekst i HTML kode, dette er kanskje greit når du koder
 ren HTML, men dette kan i visse tilfeller tvinge React til å rendere elementer unødvendig. 
 Alt av tekst, verdier og funksjoner som skal bli brukt i render-funksjonen burde bli lagret i 
-state-objektet slik:
+konstruktøren eller state-objektet slik:
  ```javascript
 this.state = {
     appName: 'Ditt chat app navn her'
