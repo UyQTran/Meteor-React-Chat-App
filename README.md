@@ -425,7 +425,7 @@ autopublish er et verktøy som fjerner veldig mye logikk fra databasen vår ved 
 all data i en gitt collection. Dette er ikke så bra for oss fordi vi vil ha flere chatrom. Tenk hvis alle
 hadde sett alle sine meldinger uavhengig av hvilket rom du er i. Fyr opp meteor igjen og fortsett!
 
-Inkluder følgende kode i publicasions.js:
+Inkluder følgende kode i imports/startup/server/publications.js :
 ```
 import { Messages } from '/imports/api/collections.js';
 
