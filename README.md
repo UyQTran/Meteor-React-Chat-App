@@ -96,7 +96,7 @@ __Oppgave 1.8\: Sjekk!__
 Sjekk om alt er som det skal. Filen som heter "package.json" beskriver
 hvilke biblioteker prosjektet vårt er avhengig av. 
 
-```
+```json
 {
   "name": "chat-app",
   "private": true,
@@ -128,7 +128,7 @@ __Oppgave 2.1\: Min chatteapp__
 Endelig kan du begynne å kode! La oss starte med å lage den aller første siden man ser i appen.
 Vi kaller denne komponenten LandingPage, lag en fil med navn "LandingPage.jsx" i imports/client/components.
 
- ```
+ ```javascript
 import React, { Component } from 'react';
 
 export default class LandingPage extends Component {
@@ -165,7 +165,7 @@ Det er ikke god kodeskikk i React å hardkode tekst i HTML kode, dette er kanskj
 ren HTML, men dette kan i visse tilfeller tvinge React til å rendere elementer unødvendig. 
 Alt av tekst, verdier og funksjoner som skal bli brukt i render-funksjonen burde bli lagret i 
 state-objektet slik:
- ```
+ ```javascript
 this.state = {
     appName: 'Ditt chat app navn her'
 };
@@ -176,7 +176,8 @@ I koden over har state et attributt som heter
 "appName" som er satt til teksten "Ditt chat app navn her".
 
 Videre skal vi bruke state-objektet vårt til å få tak i appnavnet på følgene måte:
-```
+
+```javascript
 render() {
    return (
        <div className="landing-page">
@@ -202,12 +203,14 @@ For å kunne deklarere vår LandingPage som det aller første appen skal vise m�
 for dette i FlowRouter. Alt av logikk i routing skal ligge i imports/startup/client/routes.jsx.
 
 I routes.jsx importer vår LandingPage slik:
-```
+
+```javascript
 import LandingPage from '/imports/client/components/LandingPage.jsx';
 ```
 
 og legg til følgende kode:
-```
+
+```javascript
 FlowRouter.route('/', {
     name: 'rootview',
     action(props, {goToUrl}) {
@@ -260,13 +263,14 @@ til et nytt chatterom med en random generert pin-kode. Da må vi ta i bruk av Fl
 For å generere en random pin-kode så finnes det et verktøy for dette allerede i prosjektet som
 heter PinGeneratorService. Importer denne slik:
 
-```
+```javascript
 import PinGeneratorService from '../services/PinGeneratorService.jsx';
 ```
 
 Importer FlowRouter som du har gjort i routes.jsx. Nå kan vi lage en lambda-funksjon som
 sender oss til en ny side slik:
-```
+
+```javascript
 render() {
     return (
         <div className="landing-page">
@@ -299,7 +303,8 @@ Med andre ord, FlatButton for Create blir renderet unødvendig flere ganger enn 
 
 Vi fikser dette ved å flytte funksjonen vår ut av render. Istedet for å lage en lambda funksjon så kan vi
 heller lage en vanlig funksjon og sende den referanser inn i onTouchTap:
-```
+
+```javascript
 handleCreateButton() {
     const pin = PinGeneratorService.generatePin();
     FlowRouter.go('chat-room', {pin:pin});
@@ -309,12 +314,14 @@ handleCreateButton() {
 For å gjøre denne funksjonen "bærbar" så må vi knytte LandingPage til funksjonen slik at vi bevarer
 scopet (aksess til samme variabler uavhengig hvor funksjonen blir kalt fra) til funksjonen. 
 Dette gjør vi i konstruktøren slik:
-```
+
+```javascript
 this.handleCreateButton = this.handleCreateButton.bind(this);
 ```
 
 Så kan vi endelig sende med referansen til denne funksjonen i onTouchTap slik:
-```
+
+```javascript
 render() {
     return (
         <div className="landing-page">
@@ -339,7 +346,8 @@ akkurat som du har gjort i LandingPage.jsx. Husk også å importere React!
 
 Nå gjenstår det å lage en route til denne siden i routes.jsx. Importer ChatPage og legg til følgende 
 kode i routes.jsx:
-```
+
+```javascript
 FlowRouter.route('/chat-room/:pin', {
     name: 'chat-room',
     action({pin}) {
@@ -380,7 +388,8 @@ For å ta vare på verdien i tekstfeltet så må vi ha et attributt i state. Kal
 til å være tom. Du kan deretter sette propertyen value i TextField til å bli lik this.state.textFieldValue.
 
 Legg til følgende funksjon i ChatPage:
-```
+
+```javascript
 handleTextFieldChange(event, newValue) {
     this.setState({textFieldValue:newValue});
 }
@@ -396,7 +405,8 @@ For å kunne lagre alle meldingene i appen så må det bli lagret i en database.
 som er på veldig mange måter lett å bruke. 
 
 Importer MongoDB og deklarer en collection med navn Messages i imports/api/collections.js:
-```
+
+```javascript
 import { Mongo } from 'meteor/mongo';
 
 const Messages = new Mongo.Collection('messages');
@@ -415,7 +425,8 @@ Messages er en collection eller en tabell i databasen vår.
 
 Nå blir du nødt til å avslutte Meteor hvis du har den kjørende i en termninal. Du skal nemlig fjerne en pakke
 som er inkludert i prosjektet fra før. Gjør dette ved å kjøre kommandoen:
-```
+
+```javascript
 meteor remove autopublish
 ```
 
@@ -426,7 +437,8 @@ all data i en gitt collection. Dette er ikke så bra for oss fordi vi vil ha fle
 hadde sett alle sine meldinger uavhengig av hvilket rom du er i. Fyr opp meteor igjen og fortsett!
 
 Inkluder følgende kode i imports/startup/server/publications.js :
-```
+
+```javascript
 import { Messages } from '/imports/api/collections.js';
 
 Meteor.publish('messages.byRoomNumber', (roomNumber) => {
@@ -440,7 +452,8 @@ Med andre ord, klienten må vite romnummeret til chatrommet for å kunne få tak
 
 Nå må vi lage en databasespørring (databasekode) slik at vi kan legge til data i databasen. Denne funksjonaliteten
 må være tilgjenglig for klienten så dette blir da gjort i imports/startup/api/methods.js. Legg til følgende kode:
-```
+
+```javascript
 import { Messages } from '/imports/api/collections.js';
 
 Meteor.methods({
@@ -457,7 +470,8 @@ Akkurat som publish så putter vi inn logikk i Meteor bare at denne logikken gj�
 
 Nå skal vi tilbake til komponenten ChatPage igjen og lage funksjonen handleKeyDown og ta i bruk databasen vår.
 Legg til følgende kode i ChatPage:
-```
+
+```javascript
 handleKeyDown({keyCode}) {
     if(keyCode === 13) {
         Meteor.call('addMessage', this.props.roomNumber, this.state.textFieldValue);
@@ -481,7 +495,8 @@ Det er vanlig i React å dele opp komponenter i flere deler når de etterhvert b
 komponent med navn MessageBox med samme struktur som de andre komponentene. Denne komponenten skal være litt
 annerledes med at det er en komponent som også har logikk på data og skal derfor ha en annen type 
 klassedeklarasjon:
-```
+
+```javascript
 export default class MessageBox extends TrackerReact(Component)
 ```
 
@@ -490,7 +505,8 @@ komponent som gjør mer enn å bare rendere det den har blitt fortalt om som en 
 Som en regel vi har satt for oss selv så må vi definere hva slags data vi vil ha fra databasen for å kunne 
 få data i det hele tatt. Vi trenger roomNumber for dette så det kan vi få fra props. Vi sier til Meteor 
 hvilke data vi vil ha ved å ha et kall på subscribe i en subscription attributt i state:
-```
+
+```javascript
 this.state = {
     subscription: {
         messages: Meteor.subscribe('messages.byRoomNumber', props.roomNumber)
@@ -500,7 +516,8 @@ this.state = {
 
 For å faktisk hente denne dataen må vi ha en funksjon som gjør en spørring på hva enn den kan få fra databasen.
 Legg til denne funksjonen slik:
-```
+
+```javascript
 messages() {
     return Messages.find().fetch();
 }
@@ -508,7 +525,8 @@ messages() {
 
 Nå som vi har dataene vi ville ha, kan vi vise dem i render. Her er det mye frihet, et simpelt forslag er å gjøre
 det slik:
-```
+
+```javascript
 render() {
     const messageList = this.messages();
     return (
