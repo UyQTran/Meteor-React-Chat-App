@@ -25,7 +25,7 @@ Hvis du velger å bruke Eclipse så husk å bruke Javascript versjonen.
 
 __Oppgave 0.2\: Nettleser__  
 I dette kurset anbefaler jeg å bruke Google Chrome som nettleser for å teste appen. Google Chrome
-har en utvidelse som heter React Developer Tools hjelper nettleresen å forstå hvordan appen vår fungerer
+har en utvidelse som heter React Developer Tools som hjelper nettleresen å forstå hvordan appen vår fungerer
 som gjør det lettere for oss å analysere appen.
 
 Google Chrome: https://www.google.com/chrome/browser/desktop/index.html
