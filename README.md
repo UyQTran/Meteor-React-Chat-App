@@ -152,7 +152,7 @@ export default class LandingPage extends Component {
 }
  ```
 
-Forklaring:  
+__Forklaring:__  
 Akkurat som klasser i Java så deklarerer vi klasser i Javascript på nesten samme måte. Den eneste forskjellen er
 at vi må eksportere klassen i tillegg for at andre komponenter kan importere klassen. Ved at klassen arver 
 Component fra React gjør klassen om til en React komponent!
@@ -218,7 +218,7 @@ FlowRouter.route('/', {
 });
 ```
 
-Forklaring:  
+___Forklaring:__  
 FlowRouter er en modul som husker alt av routing mellom sider i appen vår. Om du vil legge 
 til en side i appen må du sende med logikk til FlowRouter før den kan bli aksessert. 
 
@@ -285,7 +285,7 @@ render() {
 }
 ```
 
-Forklaring:  
+__Forklaring:__  
 Lambda-funksjoner i Javascript har formen (\<par1\>,\<parX\>)=>{\<kode\>}. Disse funksjonene er navnløse
 og selve koden er bare referansen til funksjonen. Altså den funksjonen som blir ikke kalt på med en
 gang fordi vi kun sender referansen inn til FlatButton. FlowRouter sin go-funksjon tar imot navnet
@@ -386,7 +386,7 @@ handleTextFieldChange(event, newValue) {
 }
 ```
 
-Forklaring:  
+__Forklaring:__  
 Attributtet state kan ikke bli endret direkte uten videre så derfor må vi bruke et asynkront kall (et kall
 som skjer i en egen programflyt) på setState. Funksjonen setState tar imot et objekt med attributter du vil
 endre på eller legge til i state.
@@ -410,7 +410,7 @@ export default {
 };
 ```
 
-Forklaring:  
+__Forklaring:__  
 Messages er en collection eller en tabell i databasen vår.
 
 Nå blir du nødt til å avslutte Meteor hvis du har den kjørende i en termninal. Du skal nemlig fjerne en pakke
@@ -420,7 +420,7 @@ meteor remove autopublish
 ```
 
 
-Forklaring:
+__Forklaring:__
 autopublish er et verktøy som fjerner veldig mye logikk fra databasen vår ved å gi alle klienter tilgang til
 all data i en gitt collection. Dette er ikke så bra for oss fordi vi vil ha flere chatrom. Tenk hvis alle
 hadde sett alle sine meldinger uavhengig av hvilket rom du er i. Fyr opp meteor igjen og fortsett!
@@ -434,7 +434,7 @@ Meteor.publish('messages.byRoomNumber', (roomNumber) => {
 });
 ```
 
-Forklaring:  
+__Forklaring:__  
 Vi legger til en logikk i databasen vår slik at serveren kun kan sende data til klienten som klienten spør om.
 Med andre ord, klienten må vite romnummeret til chatrommet for å kunne få tak i data derfra.
 
@@ -452,7 +452,7 @@ Meteor.methods({
 });
 ```
 
-Forklaring:  
+__Forklaring:__  
 Akkurat som publish så putter vi inn logikk i Meteor bare at denne logikken gjør at vi kan legge til data i databasen.
 
 Nå skal vi tilbake til komponenten ChatPage igjen og lage funksjonen handleKeyDown og ta i bruk databasen vår.
@@ -466,7 +466,7 @@ handleKeyDown({keyCode}) {
 }
 ```
 
-Forklaring:  
+__Forklaring:__  
 TextField sin onKeyDown property tar imot en funksjon og putter inn ett objekt som blant annet inneholder
 keyCode. Når keyCode er like 13 så har brukeren trykker på enter-tasten. Vi bruker da Meteor.call() som
 tar imot navnet på Meteor metoden vi lagde tidligere i publications.js og paramtere til den gitte metoden
