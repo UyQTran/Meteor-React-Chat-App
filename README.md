@@ -224,7 +224,7 @@ FlowRouter.route('/', {
 });
 ```
 
-___Forklaring:__  
+__Forklaring:__  
 FlowRouter er en modul som husker alt av routing mellom sider i appen vår. Om du vil legge 
 til en side i appen må du sende med logikk til FlowRouter før den kan bli aksessert. 
 
@@ -550,7 +550,7 @@ render() {
     );
 }
 ```
-Forklaring:  
+__Forklaring:__  
 Ved å kalle på this.messages få vi en liste av alle melinder som er sendt som ChatPage får lov til å hente
 fra databasen. Deretter bruker vi funksjonen map til å iterere gjennom listen med en lambda har skreddersydd
 til listen. Lambdaen returnerer et p-element med meldingsteksten som innhold. React krever at alle elementer
