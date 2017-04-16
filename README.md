@@ -414,7 +414,11 @@ Forklaring:
 Messages er en collection eller en tabell i databasen vår.
 
 Nå blir du nødt til å avslutte Meteor hvis du har den kjørende i en termninal. Du skal nemlig fjerne en pakke
-som er inkludert i prosjektet fra før. Gjør dette ved å kjøre kommandoen "meteor remove autopublish".
+som er inkludert i prosjektet fra før. Gjør dette ved å kjøre kommandoen:
+```
+meteor remove autopublish
+```
+
 
 Forklaring:
 autopublish er et verktøy som fjerner veldig mye logikk fra databasen vår ved å gi alle klienter tilgang til
