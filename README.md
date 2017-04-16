@@ -576,6 +576,8 @@ Dette er bare begynnelsen, skjellettet på appen. Det er mye mer man kan gjøre 
 farger, animasjoner, brukere, mer fonksjonalitet og mer robusthet kan blir lagt til i appen. Bli med i neste kurs 
 når vi går enda mer i dybden på Meteor og React! 
 
+Hvis du er flink i CSS så kan du legge til din egen styling i auto-load/client/main.css.
+
 Det ligger et løsningsforslag i en annen branch. Var det noe du ikke helt skjønte eller om du bare vil se
 en annen løsning så kan du laste ned den her: https://github.com/UyQTran/Chat-App/tree/losningsforslag
 
