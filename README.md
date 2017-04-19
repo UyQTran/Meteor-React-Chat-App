@@ -169,8 +169,8 @@ hvis vi skal rendere flere HTML-elementer så må vi wrappe dem i et div-element
 __Vent litt!__ Du har gjort noe som ikke er god React kodeskikk!  
 Det er ikke god kodeskikk i React å hardkode tekst i HTML kode, dette er kanskje greit når du koder
 ren HTML, men dette kan i visse tilfeller tvinge React til å rendere elementer unødvendig. 
-Alt av tekst, verdier og funksjoner som skal bli brukt i render-funksjonen burde bli lagret i 
-konstruktøren eller state-objektet slik:
+Alt av tekst, verdier og funksjoner som skal bli brukt i render-funksjonen burde bli lagret
+som en lokal varaibel på en eller annen måte. Her kan vi for eksempel bruke state-objektet slik:
  ```javascript
 this.state = {
     appName: 'Ditt chat app navn her'
