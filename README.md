@@ -131,6 +131,7 @@ Nå begynner moroa!
 __Oppgave 2.1\: Min chatteapp__  
 Endelig kan du begynne å kode! La oss starte med å lage den aller første siden man ser i appen.
 Vi kaller denne komponenten LandingPage, lag en fil med navn "LandingPage.jsx" i imports/client/components.
+Legg så til følgende kode i filen:
 
  ```javascript
 import React, { Component } from 'react';
