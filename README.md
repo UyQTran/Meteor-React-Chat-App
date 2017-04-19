@@ -54,7 +54,7 @@ Last ned og installer Meteor: https://www.meteor.com/install
 Last ned og installer NodeJS: https://nodejs.org/en/
 
 __Oppgave 1.2\: Last ned prekoden__  
-Last ned prekoden fra: https://github.com/UyQTran/Chat-App/archive/master.zip
+Last ned prekoden fra: https://github.com/UyQTran/Chat-App/archive/master.zip  
 ELLER  
 Clone direkte fra repositorien med linken: https://github.com/UyQTran/Chat-App.git  
 
