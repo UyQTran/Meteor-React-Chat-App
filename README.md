@@ -177,7 +177,8 @@ this.state = {
 };
  ```
  
-Objektet state tar vare på verdier og fungerer som minnet til komponenten som kun den komponenten har tilgang til. 
+Objektet state tar vare på verdier og fungerer som minnet til komponenten som kun den komponenten har tilgang til
+(tenk klassevariabler i Java). 
 I koden over har state et attributt som heter
 "appName" som er satt til teksten "Ditt chat app navn her".
 
