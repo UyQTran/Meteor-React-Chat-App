@@ -28,7 +28,8 @@ I dette kurset anbefaler jeg å bruke Google Chrome som nettleser for å teste a
 har en utvidelse som heter React Developer Tools som hjelper nettleresen å forstå hvordan appen vår fungerer
 som gjør det lettere for oss å analysere appen.
 
-Google Chrome: https://www.google.com/chrome/browser/desktop/index.html
+Google Chrome: https://www.google.com/chrome/browser/desktop/index.html  
+React Developer Tool: https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi?hl=en
 
 __React__  
 React er et front-end bibliotek som håndterer logikk på brukergrensesnittet til appen vår. Her bruker vi
@@ -79,6 +80,8 @@ Bruk denne kommandoen i terminalen for å installere Material-UI biblioteket:
 ```
 meteor npm install --save material-ui
 ```
+
+Material-UI dokumentasjon: http://www.material-ui.com/
 
 __Oppgave 1.6\: Legg til FlowRouter og diverse__  
 React har et innebygd router verktøy, men vi skal ikke bruke denne fordi det blir mye uryddig kode av det.
