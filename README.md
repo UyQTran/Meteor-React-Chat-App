@@ -57,7 +57,7 @@ __Oppgave 1.2\: Last ned prekoden__
 Scroll helt øverst på denne siden og trykk på den grønne knappen "Clone or download" og trykk på "download ZIP"  
 Pakk så ut .zip filen i et valgfritt sted på din maskin  
 ELLER  
-Pull direkte fra repositorien med linken: https://github.com/UyQTran/Chat-App.git  
+Clone direkte fra repositorien med linken: https://github.com/UyQTran/Chat-App.git  
 
 __Oppgave 1.3\: Prøvekjør appen__  
 Åpne mappen du lastet ned i din favoritt-terminal eller kommandolinje  
