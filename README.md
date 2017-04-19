@@ -12,7 +12,7 @@ tar INF1010 nå så er du mer enn kvalifisert til dette kurset!
 
 I oppgavene har jeg med vilje vært vanskelig noen steder for å få deg til å tenke om hva du
 gjør når du koder. Det blir veldig mye copy-paste på begynnelsen, men etterhvert som du
-fortsetter på oppgavene, antar jeg at du skjønner hva du copy-paster og klarer å gjøre det
+fortsetter på oppgavene, antar jeg at du skjønner hva du copy-paster og klarer å
 skrive det samme i andre kontekster. Spør meg på e-post hvis du ser ting som ikke stemmer
 eller lurer på noe: uqtontran@gmail.com
 
