@@ -278,7 +278,7 @@ heter PinGeneratorService. Importer denne slik:
 import PinGeneratorService from '../services/PinGeneratorService.jsx';
 ```
 
-Importer FlowRouter som du har gjort i routes.jsx. Nå kan vi lage en lambda-funksjon som
+ Nå kan vi lage en lambda-funksjon som
 sender oss til en ny side slik:
 
 ```javascript
