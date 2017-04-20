@@ -68,7 +68,7 @@ __Oppgave 1.4\: Installering av React__
 Nå skal vi installere React i prosjektet vårt. Åpne prosjektet i terminalen og kjøre følgende kommando:
 
 ```
-meteor npm install --save react react-mounter react-dom react-tap-event-plugin
+meteor npm install --save react react-mounter react-dom react-tap-event-plugin babel-runtime
 ```
 
 __Oppgave 1.5\: Installering av Material-UI__  
