@@ -53,6 +53,8 @@ __Oppgave 1.1\: Oppsett på egen maskin__
 Last ned og installer Meteor: https://www.meteor.com/install  
 Last ned og installer NodeJS: https://nodejs.org/en/
 
+Hvis du bruker Windows så kan de lønne seg å restarte maskinen for at path-variabler skal bli oppdatert
+
 __Oppgave 1.2\: Last ned prekoden__  
 Last ned prekoden fra: https://github.com/UyQTran/Chat-App/archive/master.zip  
 ELLER  
