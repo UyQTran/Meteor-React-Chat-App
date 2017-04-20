@@ -1,1 +1,1 @@
-import './methods.jsx';
+import './methods.js';
