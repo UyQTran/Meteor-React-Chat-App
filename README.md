@@ -60,20 +60,14 @@ Last ned prekoden fra: https://github.com/UyQTran/Chat-App/archive/master.zip
 ELLER  
 Clone direkte fra repositorien med linken: https://github.com/UyQTran/Chat-App.git  
 
-__Oppgave 1.3\: Prøvekjør appen__  
-Åpne mappen du lastet ned i din favoritt-terminal eller kommandolinje  
-Start appen ved å skrive kommandoen "meteor" og trykk enter, vent til Meteor er ferdig med å bygge appen  
-Åpne en nettleser og gå til addressen "localhost:3000". Du kommer til å se noen warnings i terminalen,
-ignorer disse for nå, vi skal fikse dem senere.
-
-__Oppgave 1.4\: Installering av React__  
+__Oppgave 1.3\: Installering av React__  
 Nå skal vi installere React i prosjektet vårt. Åpne prosjektet i terminalen og kjøre følgende kommando:
 
 ```
 meteor npm install --save react react-mounter react-dom react-tap-event-plugin babel-runtime
 ```
 
-__Oppgave 1.5\: Installering av Material-UI__  
+__Oppgave 1.4\: Installering av Material-UI__  
 Material-UI er et GUI-bibliotek av Google som tar i bruk av Material Design. Material-UI er skreddersydd til
 React noe som gjør det mye lettere å bruke. Er du en Android bruker så er du sikkert allerede kjent med 
 GUI-elementene.
@@ -85,7 +79,7 @@ meteor npm install --save material-ui
 
 Material-UI dokumentasjon: http://www.material-ui.com/
 
-__Oppgave 1.6\: Legg til FlowRouter og diverse__  
+__Oppgave 1.5\: Legg til FlowRouter og diverse__  
 React har et innebygd router verktøy, men vi skal ikke bruke denne fordi det blir mye uryddig kode av det.
 FlowRouter er et verktøy for React som nettopp fikser dette og er mye lettere å lære.
 FlowRouter ligger i et bibliotek som heter Kadira som allerede finnes i Meteor.
@@ -95,10 +89,10 @@ Legg til FlowRouter og andre viktige verktøy i prosjektet med denne kommandoen:
 meteor add kadira:flow-router alanning:roles ultimatejs:tracker-react
 ```
 
-__Oppgave 1.7\: Last ned resterende dependencies__  
+__Oppgave 1.6\: Last ned resterende dependencies__  
 Kjør kommandoen "meteor npm install" for å laste ned dependencies som du mangler eller trenger å oppdatere.
 
-__Oppgave 1.8\: Sjekk!__  
+__Oppgave 1.7\: Sjekk!__  
 Sjekk om alt er som det skal. Filen som heter "package.json" beskriver
 hvilke biblioteker prosjektet vårt er avhengig av. 
 
@@ -122,6 +116,13 @@ hvilke biblioteker prosjektet vårt er avhengig av.
 ```
 
 Hvis package-filen ser ut som koden over kan du fortsette!
+
+
+__Oppgave 1.8\: Prøvekjør appen__  
+Åpne mappen du lastet ned i din favoritt-terminal eller kommandolinje  
+Start appen ved å skrive kommandoen "meteor" og trykk enter, vent til Meteor er ferdig med å bygge appen  
+Åpne en nettleser og gå til addressen "localhost:3000". Du kommer til å se noen warnings i terminalen,
+ignorer disse for nå, vi skal fikse dem senere.
 
 __Oppgave 1 fullført! Hva har vi lært?__  
 * Hvordan vi installerer nye biblioteker med npm. Merk at kommandoen "meteor npm install"
