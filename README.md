@@ -108,6 +108,7 @@ hvilke biblioteker prosjektet vårt er avhengig av.
     "start": "meteor run"
   },
   "dependencies": {
+    "babel-runtime": "^6.23.0",
     "material-ui": "^0.17.3",
     "meteor-node-stubs": "~0.2.0",
     "react": "^15.5.3",
