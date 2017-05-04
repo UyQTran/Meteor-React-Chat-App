@@ -420,7 +420,7 @@ __Oppgave 3.2\: MongoDB__
 For å kunne lagre alle meldingene i appen så må det bli lagret i en database. Meteor følger med MongoDB
 som er på veldig mange måter lett å bruke. 
 
-Importer MongoDB og deklarer en collection med navn Messages i imports/api/collections.js:
+Importer MongoDB og deklarer en collection med navn Messages i imports/api/collections.jsx:
 
 ```javascript
 import { Mongo } from 'meteor/mongo';
@@ -452,10 +452,10 @@ autopublish er et verktøy som fjerner veldig mye logikk fra databasen vår ved 
 all data i en gitt collection. Dette er ikke så bra for oss fordi vi vil ha flere chatrom. Tenk hvis alle
 hadde sett alle sine meldinger uavhengig av hvilket rom du er i. Fyr opp meteor igjen og fortsett!
 
-Inkluder følgende kode i imports/startup/server/publications.js :
+Inkluder følgende kode i imports/startup/server/publications.jsx :
 
 ```javascript
-import { Messages } from '/imports/api/collections.js';
+import { Messages } from '/imports/api/collections.jsx';
 
 Meteor.publish('messages.byRoomNumber', (roomNumber) => {
     return Messages.find({roomNumber});
@@ -467,10 +467,10 @@ Vi legger til en logikk i databasen vår slik at serveren kun kan sende data til
 Med andre ord, klienten må vite romnummeret til chatrommet for å kunne få tak i data derfra.
 
 Nå må vi lage en databasespørring (databasekode) slik at vi kan legge til data i databasen. Denne funksjonaliteten
-må være tilgjenglig for klienten så dette blir da gjort i imports/startup/api/methods.js. Legg til følgende kode:
+må være tilgjenglig for klienten så dette blir da gjort i imports/startup/api/methods.jsx. Legg til følgende kode:
 
 ```javascript
-import { Messages } from '/imports/api/collections.js';
+import { Messages } from '/imports/api/collections.jsx';
 
 Meteor.methods({
     addMessage(roomNumber, messageString) {
@@ -499,7 +499,7 @@ handleKeyDown({keyCode}) {
 __Forklaring:__  
 TextField sin onKeyDown property tar imot en funksjon og putter inn ett objekt som blant annet inneholder
 keyCode. Når keyCode er like 13 så har brukeren trykker på enter-tasten. Vi bruker da Meteor.call() som
-tar imot navnet på Meteor metoden vi lagde tidligere i publications.js og paramtere til den gitte metoden
+tar imot navnet på Meteor metoden vi lagde tidligere i publications.jsx og paramtere til den gitte metoden
 og setter tekstfeltet til å være tomt igjen.
 
 Husk å gjøre disse "bærbare" ved å knytte scopet til ChatPage til begge funksjonene i konstruktøren. Så kan du
