@@ -5,7 +5,8 @@
     "start": "meteor run"
   },
   "dependencies": {
-    "material-ui": "^0.17.3",
+    "babel-runtime": "^6.23.0",
+    "material-ui": "^0.17.4",
     "meteor-node-stubs": "~0.2.0",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
