@@ -375,7 +375,7 @@ __Oppgave 2 fullført! Hva har vi lært?__
 * Hvordan React er en blanding av HTML og Javascript
 * Litt om hva som skjer bak kulissene i React.  
 
-Nå kommer det noe back-end!
+Et løsningsforslag til oppgave 2 ligger i en egen branch. Det kan fortsatt hende at du må gjøre oppgave 1.3 til 1.5 for at løsningsfoslaget skal fungere på din egen maskin. Last ned herfra: https://github.com/UyQTran/Chat-App/archive/oppgave2-ferdig.zip
 <a name="database"/>
 ## Oppgave 3: Database
 __Oppgave 3.1\: TextField__  
