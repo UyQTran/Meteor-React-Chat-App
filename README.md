@@ -589,3 +589,4 @@ Hvis du er flink i CSS så kan du legge til din egen styling i auto-load/client/
 Det ligger et løsningsforslag i en annen branch. Var det noe du ikke helt skjønte eller om du bare vil se
 en annen løsning så kan du laste ned den her: https://github.com/UyQTran/Chat-App/tree/losningsforslag
 
+Chat-App Del 2: https://github.com/UyQTran/Chat-App-Del-2
