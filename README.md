@@ -1,4 +1,4 @@
-# Applitude - Chat App med ReactJS og Meteor
+# Chat App med ReactJS og Meteor
 #### Innhold  
 [Forord](#forord)  
 [Oppgave 1: Oppsett](#oppsett)  
